@@ -1,3 +1,3 @@
-# ircam-theme
+# ircam-www-theme
 
 Ircam theme for Mezzo
