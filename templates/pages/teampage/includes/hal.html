@@ -8,7 +8,7 @@
                 <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
                     <h2 class="dotted" id="section-4">{% trans 'Publications' %}</h2>
                     <div class="hal_container">
-                        <iframe src="{{ team.hal_tutelage|get_hal_url:team.hal_researche_structure }}" frameborder="0" scrolling="no"></iframe>
+                        <iframe src="{{ team.hal_tutelage|hal_1:team.hal_researche_structure|hal_2:http_host }}" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
             </div>
