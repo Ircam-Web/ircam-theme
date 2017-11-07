@@ -43,6 +43,22 @@ $module: ".media-box";
         }
     }
 
+    &__content {
+        @include padding(.25 .25 1 .25);
+
+        position: relative;
+        overflow: hidden;
+        display: block;
+
+        @include mq($until: xs) {
+            height: auto;
+        }
+
+        .slider-home & {
+            @include padding(0);
+        }
+    }
+
     &__image {
 
         @include fluid-aspect(320 190);
