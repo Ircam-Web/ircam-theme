@@ -15,6 +15,25 @@
     media
 {% endblock %}
 
+{% block body_class %}
+{% if department_weaving_css_class %}
+    pattern pattern-bg {{ department_weaving_css_class }}
+{% endif %}
+{% endblock %}
+
+{% block page_tags %}
+
+    {% if department_name %}
+        <div class="tag dashed dashed--gray">
+          {{ department_name }}
+        </div>
+    {% endif %}
+    <div class="tag tag--category">
+        {% trans 'Media' %}
+    </div>
+
+{% endblock %}
+
 
 {% block page_title %}
     {% editable media.title %}
