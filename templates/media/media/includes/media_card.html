@@ -12,6 +12,16 @@
                         <div class="media-box__placeholder"></div>
                     {% endif %}
                 {% endwith %}
+                <div class="article-box__tags">
+                    <div class="tag tag--small tag--category">
+                        {% trans 'Media' %}
+                    </div>
+                    {% if object.department.first.department %}
+                        <div class="tag tag--small dashed dashed--gray dashed--small">
+                          {{ object.department.first.department.name }}
+                        </div>
+                    {% endif %}
+                </div>
             </figure>
         </a>
         <a class="media-box__content" href="{% url 'organization-media-detail' object|get_media_type|lower object.slug %}">
