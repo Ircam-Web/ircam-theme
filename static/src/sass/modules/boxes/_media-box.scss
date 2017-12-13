@@ -61,7 +61,7 @@ $module: ".media-box";
 
     &__image {
 
-        @include fluid-aspect(320 190);
+        @include fluid-aspect(427 286);
         overflow: hidden;
 
         img {
