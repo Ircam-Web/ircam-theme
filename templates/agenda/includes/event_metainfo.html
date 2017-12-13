@@ -7,7 +7,7 @@
 <div class="page__meta-separator"></div>
 
 {% if event.location %}
-    <div class="page__meta-title">{{ event.location }}</div>
+    <div class="page__meta-title">{{ event.location.title }}</div>
     {% if event.location.room %}
         <small>{{ event.location.room }}</small>
     {% endif %}
