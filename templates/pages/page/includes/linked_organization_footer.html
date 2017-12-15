@@ -3,7 +3,7 @@
     {% if lof.images.all %}
     <a href="{{ lof.url }}" target="_blank" title="{{ lof.name }}">
         {% with lof.images|get_type:"logo_white"|first as img %}
-            <img class="footer__partner" src="{{ MEDIA_URL }}{{ img }}" title="{{ img.title }}" width="120" height="66" />
+            <img class="footer__partner" src="{{ MEDIA_URL }}{{ img }}" title="{{ img.title }}" width="60" height="72" />
         {% endwith %}
     </a>
     {% endif %}
