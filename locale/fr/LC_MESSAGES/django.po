@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-15 11:04+0000\n"
+"POT-Creation-Date: 2017-12-15 11:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -385,7 +385,7 @@ msgstr ""
 
 #: templates/errors/500.html:16 templates/errors/500.html:30
 msgid "Sorry, an error occurred."
-msgstr ""
+msgstr "Une erreur s'est produite."
 
 #: templates/generic/includes/comment.html:22
 #: templates/generic/includes/comment.html:59 templates/twitter/tweets.html:19
@@ -416,7 +416,7 @@ msgstr ""
 
 #: templates/generic/includes/comments.html:3
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: templates/generic/includes/comments.html:17
 msgid "New Comment"
@@ -430,7 +430,7 @@ msgstr ""
 #: templates/magazine/article/article_detail.html:38
 #: templates/magazine/article/includes/article_card.html:45
 msgid "News"
-msgstr ""
+msgstr "Actualité"
 
 #: templates/includes/editable_form.html:16
 msgid "Save"
@@ -446,23 +446,23 @@ msgstr ""
 
 #: templates/includes/footer.html:8
 msgid "Subscribe to our newsletter"
-msgstr ""
+msgstr "Inscription à la newsletter"
 
 #: templates/includes/footer.html:12
 msgid "Follow us on"
-msgstr ""
+msgstr "Suivez-nous sur"
 
 #: templates/includes/footer.html:41
 msgid "Opening times"
-msgstr ""
+msgstr "Horaires d'ouverture"
 
 #: templates/includes/footer.html:46
 msgid "Subway access"
-msgstr ""
+msgstr "Accès en transports"
 
 #: templates/includes/footer.html:72
 msgid "go to"
-msgstr ""
+msgstr "Aller vers"
 
 #: templates/includes/footer.html:90
 msgid "All rights reserved"
@@ -474,11 +474,11 @@ msgstr ""
 
 #: templates/includes/pagination.html:12
 msgid "Previous page"
-msgstr ""
+msgstr "Page précédente"
 
 #: templates/includes/pagination.html:26
 msgid "Next page"
-msgstr ""
+msgstr "Page suivante"
 
 #: templates/includes/search_form.html:12 templates/search_results.html:27
 msgid "Type something"
@@ -486,24 +486,24 @@ msgstr "Recherche"
 
 #: templates/includes/share_buttons.html:5
 msgid "Share on Facebook"
-msgstr ""
+msgstr "Partagez sur Facebook"
 
 #: templates/includes/share_buttons.html:8
 msgid "Share on Twitter"
-msgstr ""
+msgstr "Partagez sur Twitter"
 
 #: templates/includes/share_buttons.html:11
 msgid "Share by email"
-msgstr ""
+msgstr "Partager par email"
 
 #: templates/includes/share_buttons.html:14
 msgid "Print this page"
-msgstr ""
+msgstr "Imprimer cette page"
 
 #: templates/includes/share_buttons.html:18
 #: templates/includes/share_buttons.html:23
 msgid "Add to"
-msgstr ""
+msgstr "Ajouter à"
 
 #: templates/includes/sidebar.html:10 templates/index.html:33
 #: templates/magazine/topic/topic_detail.html:5
@@ -551,19 +551,19 @@ msgstr ""
 #: templates/job/inc/candidacy_card.html:22
 #: templates/job/inc/candidacy_card.html:24
 msgid "From"
-msgstr ""
+msgstr "Du"
 
 #: templates/job/inc/candidacy_card.html:26
 msgid "until"
-msgstr ""
+msgstr "jusqu'au"
 
 #: templates/job/inc/job_offer_card.html:17
 msgid "Published on"
-msgstr ""
+msgstr "Publié le"
 
 #: templates/job/inc/job_offer_card.html:23
 msgid "View"
-msgstr ""
+msgstr "Vue"
 
 #: templates/job/job_offer_list.html:4 templates/job/job_offer_list.html:15
 msgid "Jobs"
