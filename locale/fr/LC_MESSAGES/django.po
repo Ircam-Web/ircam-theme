@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-15 11:45+0000\n"
+"POT-Creation-Date: 2017-12-15 13:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -223,7 +223,7 @@ msgstr "Événements du lieu"
 #: templates/agenda/event_location_list.html:22
 #: templates/agenda/includes/filter_panel.html:58
 msgid "Locations"
-msgstr ""
+msgstr "Lieux"
 
 #: templates/agenda/includes/event_date_line.html:10
 #: templates/job/inc/candidacy_card.html:22
@@ -249,7 +249,7 @@ msgstr "Salle"
 
 #: templates/agenda/includes/event_location.html:13
 msgid "Click to get the interactive map"
-msgstr "Cliquer pour voir la carte interactiv"
+msgstr "Cliquer pour voir la carte interactive"
 
 #: templates/agenda/includes/event_metainfo.html:30
 msgid "Level"
@@ -547,6 +547,7 @@ msgstr "Candidatures"
 #: templates/job/candidacy_list.html:35
 msgid "Please come back later. There is no candidacy at the moment."
 msgstr ""
+"Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
 
 #: templates/job/inc/candidacy_card.html:22
 #: templates/job/inc/candidacy_card.html:24
@@ -572,6 +573,7 @@ msgstr "Offres d'emplois et stages"
 #: templates/job/job_offer_list.html:28
 msgid "Please come back later. There is no job offer at the moment."
 msgstr ""
+"Merci de revenir plus tard. Il n'y a pas d'offre d'emploi pour le moment."
 
 #: templates/magazine/article/article_detail.html:103
 #: templates/media/audio/audio_detail.html:49
