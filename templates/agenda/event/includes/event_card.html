@@ -59,7 +59,7 @@
         {% include 'agenda/includes/event_date_line.html' %}
     </strong>
     {% if object.location %}
-         <br />{{ object.location }}
+         <br />{{ object.location.title }}
     {% endif %}
 {% endblock %}
 
