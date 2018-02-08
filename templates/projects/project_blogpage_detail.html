@@ -40,19 +40,19 @@
 {% endblock %}
 
 {% block page_content %}
-    {% if object.content %}
-        {% editable object.content %}
-            {{ object.content|richtext_filters|safe }}
-        {% endeditable %}
-    {% endif %}
     {% if object.login_required_content and not user.is_authenticated %}
+        {% editable block.content %}
+            {{ object.login_required_content|richtext_filters|safe }}
+        {% endeditable %}
+    {% else %}
+        {% if object.content %}
+            {% editable object.content %}
+                {{ object.content|richtext_filters|safe }}
+            {% endeditable %}
+        {% endif %}
         <div class="chapo" id="login_required_content">
             {% trans "Please login to get more data." %}<br><br>
             <a class="button" href="{% url 'login' %}?next={{ request.path }}#login_required_content" title="Login">{% trans "Login" %}</a>
         </div>
-    {% else %}
-            {% editable block.content %}
-                {{ object.login_required_content|richtext_filters|safe }}
-            {% endeditable %}
     {% endif %}
 {% endblock %}
