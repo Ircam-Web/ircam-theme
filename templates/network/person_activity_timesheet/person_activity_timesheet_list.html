@@ -13,45 +13,10 @@
 
 {% block page_content %}
 
-    {% if timesheets_by_year %}
         {% for year_k, year_v in timesheets_by_year.items %}
+            
             <h2>{{ year_k }}</h2>
-            {% if year_k == current_year %}
-                <table class="timesheet-table">
-                    <tr>
-                        <td class="timesheet-table-legend">
-                            {% for i in year_v.project_count|times %}
-                                {% include "network/person_activity_timesheet/includes/person_activity_timesheet_header.html" %}
-                            {% endfor %}
-                        </td>
-                        {% for month in months %}
-                            <td>
-                                <table>
-                                    <tr>
-                                        <th class="timesheet-table-header">
-                                            <h3>{{ month|month_name }}</h3>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {% if month in year_v.timesheets.keys %}
-                                                {% with year_v.timesheets|get_value:month as t_month %}
-                                                    {% for timesheet in t_month %}
-                                                        {% include "network/person_activity_timesheet/includes/person_activity_timesheet_inline.html" %}
-                                                    {% endfor %}
-                                                {% endwith %}
-                                            {% else %}
-                                                <a class="pull-right button wys-button-yellow" href="{% url 'organization-network-timesheet-create-view' current_year month %}" title="">Declare</a>
-                                            {% endif %}
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
 
-                        {% endfor %}
-                    </tr>
-                </table>
-            {% else %}
                 <table class="timesheet-table">
                     <tr>
                         <td class="timesheet-table-legend">
@@ -69,9 +34,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                    {% for timesheet in month_v %}
-                                        {% include "network/person_activity_timesheet/includes/person_activity_timesheet_inline.html" %}
-                                    {% endfor %}
+                                    {% if month_v %}
+                                        {% for timesheet in month_v %}
+                                            {% include "network/person_activity_timesheet/includes/person_activity_timesheet_inline.html" %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <a class="pull-right button wys-button-yellow" href="{% url 'organization-network-timesheet-create-view' year_k month_k %}" title="">Declare</a>
+                                    {% endif %}
                                     </td>
                                 </tr>
                             </table>
@@ -79,36 +48,7 @@
                     {% endfor %}
                     </tr>
                 </table>
-
-            {% endif %}
         {% endfor %}
-    {% else %}
-        <h2>{{ current_year }}</h2>
-        <table class="timesheet-table">
-            <tr>
-                <td class="timesheet-table-legend">
-
-                </td>
-                {% for month in months %}
-                    <td>
-                        <table>
-                            <tr>
-                                <th class="timesheet-table-header">
-                                    <h3>{{ month|month_name }}</h3>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a class="pull-right button wys-button-yellow" href="{% url 'organization-network-timesheet-create-view' current_year month %}" title="">Declare</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-
-                {% endfor %}
-            </tr>
-        </table>
-    {% endif %}
 
 {% endblock %}
 
