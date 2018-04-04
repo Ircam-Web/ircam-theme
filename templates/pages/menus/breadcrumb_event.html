@@ -14,15 +14,33 @@
             <li class="breadcrumb__item" id="breadcrumb-menu-{{ page.html_id }}">
                 <a class="breadcrumb__link" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
             </li>
+        {% elif event %}   
+            {% if event.keywords.first.keyword_id|tag_is_excluded %}
+                <li class="breadcrumb__item" id="breadcrumb-menu-{{ page.html_id }}">
+                    {% with event.keywords.first.keyword_id|get_tag as tag %}
+                        <a class="breadcrumb__link" href="{% url 'event_list_tag' tag.slug %}">{{ tag }}</a>
+                    {% endwith %}
+                </li>
+            {% else %}
+            <li class="breadcrumb__item" id="breadcrumb-menu-{{ page.html_id }}">
+                <a class="breadcrumb__link" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+            </li>
+            {% endif %}
+
+            <li class="breadcrumb__item" id="breadcrumb-menu-{{ page.html_id }}" class="active">
+                {{ event.title }}
+            </li>
+
         {% endif %}
         {% if page.has_children %}
-            {% if tag and tag|tag_is_excluded %}
+            {% if tag and tag.id|tag_is_excluded %}
                 <li class="breadcrumb__item" id="breadcrumb-menu-{{ page.html_id }}">
                     {{ tag }}
                 </li>
             {% else %}
                 {% page_menu page %}
             {% endif %}
+        {% else %}    
         {% endif %}
     {% endif %}
 {% endfor %}
