@@ -40,7 +40,7 @@
 {% endblock %}
 
 {% block page_content %}
-    {% if object.login_required_content and not user.is_authenticated %}
+    {% if object.login_required_content and user.is_authenticated %}
         {% editable block.content %}
             {{ object.login_required_content|richtext_filters|safe }}
         {% endeditable %}
