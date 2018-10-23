@@ -1,4 +1,4 @@
-{% load i18n future mezzanine_tags event_tags keyword_tags disqus_tags organization_tags %}
+{% load i18n  mezzanine_tags event_tags keyword_tags disqus_tags organization_tags %}
 <div class="">
     <div class="media-box media-box--{{object|get_media_type|lower}}">
         <a class="media-box__image-container" href="{% url 'organization-media-detail' object.type object.slug %}">

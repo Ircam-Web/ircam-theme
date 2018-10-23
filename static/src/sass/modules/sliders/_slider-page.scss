@@ -96,6 +96,7 @@ $module: ".slider-page";
 
         @include mq($until: sm) {
             width: 100%;
+            height: auto;
         }
 
     }
