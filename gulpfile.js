@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
     rimraf = require('rimraf'),
-    compass = require('gulp-compass'),
+    sass = require('gulp-sass'),
+    sassMagicImporter = require ('node-sass-magic-importer'),
+    postcss = require ('gulp-postcss'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     ignore = require('gulp-ignore'),
@@ -13,8 +15,9 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     copy = require('gulp-copy'),
     plumber = require('gulp-plumber'),
-    autoprefixer = require('gulp-autoprefixer'),
+    autoprefixer = require('autoprefixer'),
     browserify = require('gulp-browserify'),
+    util = require('util'),
     sourcemaps = require('gulp-sourcemaps');
 
 var srcFolder = 'static/src/',
@@ -69,21 +72,22 @@ gulp.task('main-js', function() {
 
 gulp.task('main-css', function() {
     return gulp.src(srcFolder + 'sass/*.scss')
-        .pipe(plumber({
-            errorHandler: function (error) {
-                this.emit('end');
-            }})
-        )
-        .pipe(compass({
-            css: './.tmp/main',
-            sass: srcFolder + 'sass'
-        }))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.init())
-        .pipe(autoprefixer())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(destFolder + 'css'))
-        .pipe(browserSync.stream());
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      includePaths: ['../../node_modules', srcFolder + 'sass'],
+      precision: 10,
+      importer: sassMagicImporter({
+        disableImportOnce: true
+      })
+    })).on('error', util.log.bind(util, 'Sass Error'))
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(destFolder + 'css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('cssmin', function() {
