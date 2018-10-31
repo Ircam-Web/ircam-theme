@@ -1,6 +1,14 @@
 {% load mezzanine_tags i18n %}
 {% if images %}
     {% for image in images %}
-        <li class="partners-list__item" style="background-image:url('{{ MEDIA_URL }}{{ image.file }}');"><img alt="{{ image.title }}" src="{{ MEDIA_URL }}{{ image.file }}"></li>
+        <li class="partners-list__item" style="background-image:url('{{ MEDIA_URL }}{{ image.file }}');">
+            {% if url %}
+                <a href="{{ url }}" title="" target="_blank">
+            {% endif %}
+                    <img alt="{{ image.title }}" src="{{ MEDIA_URL }}{{ image.file }}">
+            {% if url %}
+                </a>
+            {% endif %}
+        </li>
     {% endfor %}
 {% endif %}
