@@ -13,6 +13,10 @@
     projectblogpage
 {% endblock %}
 
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=object.title description=object.description|safe %}
+{% endblock %}
+
 {% block breadcrumb_menu %}
     {{ block.super }}
     <li class="breadcrumb__item"><a class="breadcrumb__link" href="{% url 'organization-project-detail' object.project.slug %}">{{ object.project.title }}</a></li>

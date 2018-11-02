@@ -25,6 +25,11 @@
     {% endmetablock %}
 {% endblock %}
 
+{% block facebook_meta %}
+    {% trans "Rendez-vous in Paris" as title %}
+    {% include 'core/inc/facebook_meta.html' with title=title description=page.description|safe %}
+{% endblock %}
+
 {% block breadcrumb_menu %}
     {% page_menu "pages/menus/breadcrumb_event.html" %}
 {% endblock %}

@@ -15,6 +15,10 @@
 {{ page.description|safe }}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=page.projecttopicpage.title description=page.description|safe %}
+{% endblock %}
+
 {% block page_class %}
     department
 {% endblock %}

@@ -15,6 +15,12 @@
 {{ product.description|safe }}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% with images.all|get_type:'card' as card_image %}
+    {% include 'core/inc/facebook_meta.html' with title=product.title description=product.description|safe image=card_image.first.file.url %}
+    {% endwith %}
+{% endblock %}
+
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">

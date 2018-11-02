@@ -1,6 +1,10 @@
 {% extends "pages/page.html" %}
 {% load mezzanine_tags keyword_tags i18n organization_tags %}
 
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=job_offer.title description=job_offer.description|safe %}
+{% endblock %}
+
 {% block breadcrumb_menu %}
 
     {{ block.super }}

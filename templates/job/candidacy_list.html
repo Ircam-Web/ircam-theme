@@ -7,6 +7,11 @@
 {{ candidacy.description|safe }}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% trans "Candidacies" as title %}
+    {% include 'core/inc/facebook_meta.html' with title=title %}
+{% endblock %}
+
 {% block breadcrumb_menu %}
     {{block.super}}
     <li class="breadcrumb__item active">

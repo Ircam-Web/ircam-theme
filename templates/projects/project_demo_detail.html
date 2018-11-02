@@ -9,6 +9,10 @@
     {% endmetablock %}
 {% endblock %}
 
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=demo.title description=demo.description|safe %}
+{% endblock %}
+
 {% block page_class %}
     demo
 {% endblock %}

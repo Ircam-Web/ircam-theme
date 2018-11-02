@@ -7,6 +7,11 @@
 {{ job_offer.description|safe }}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% trans "Jobs" as title %}
+    {% include 'core/inc/facebook_meta.html' with title=title %}
+{% endblock %}
+
 {% block page_class %}
     job_offer
 {% endblock %}

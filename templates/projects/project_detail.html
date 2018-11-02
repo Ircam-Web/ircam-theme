@@ -11,6 +11,12 @@
 {% endfor %}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% with page.images.all|get_type:'card' as card_image %}
+    {% include 'core/inc/facebook_meta.html' with title=object.title description=object.description|safe %}
+    {% endwith %}
+{% endblock %}
+
 {% block page_class %}
     object
 {% endblock %}

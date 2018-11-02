@@ -17,6 +17,10 @@
     {{ topic.description|safe }}
 {% endmetablock %}{% endblock %}
 
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=page.title description=topic.description|safe %}
+{% endblock %}
+
 {% block title %}
     {% if page %}
         {% editable page.title %}{{ page.title }}{% endeditable %}
