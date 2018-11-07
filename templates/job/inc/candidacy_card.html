@@ -23,7 +23,7 @@
                     {% elif content.date_from %}
                         <strong>{% trans "From" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}</strong><br/>
                     {% elif content.date_to %}
-                        <strong>{% trans "until" %}{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
+                        <strong>{% trans "until" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
                     {% endif %}
                 {% endeditable %}
                 <br />
