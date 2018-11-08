@@ -105,36 +105,13 @@
 {% endblock %}
 
 {% block page_person_list %}
-    {% if event.persons.all %}
-        <div class="white-bg pb2">
-            <hr class="mt0" />
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2" data-summary-content>
-                        <h2 class="dotted">
-                            {% if event.trainings.all %}
-                                {% trans "Trainers" %}<br>
-                            {% else %}
-                                {% trans "Persons" %}<br>
-                            {% endif %}
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
-                        {% for person in event.persons.all %}
-                                {% with person.person as person %}
-                                    {% include "network/inc/person/person_card_circle.html" %}
-                                {% endwith %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+    {% for event_person_list_block_inline in event.persons_list.all  %}
+        {% with event_person_list_block_inline.person_list_block as person_list_block %}
+        {% with "network/inc/person/list_"|add:person_list_block.style|add:"_style.html" as template %}
+            {% include template %}
+        {% endwith %}
+      {% endwith %}
+    {% endfor %}
 {% endblock %}
 
 {% block page_sub_content %}
