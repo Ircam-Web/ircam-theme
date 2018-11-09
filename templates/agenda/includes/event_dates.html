@@ -22,10 +22,7 @@
                     {% elif not same_time_in_periods %}
                         {% include 'agenda/includes/event_time.html' with date_obj=period date_begin=period.date_from date_end=period.date_to %}
                         {% if not forloop.last %}
-                            {% ifchanged  period.date_from.date %}
-                            {% else %}
-                                <span class="inline-date">, </span>
-                            {% endifchanged %}
+                            <span class="inline-date">, </span>
                         {% endif %}
                         {% if not same_day_in_periods and not forloop.last %}
                             {% ifchanged period.date_from.date %}
