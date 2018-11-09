@@ -8,14 +8,14 @@
 {% endmetablock %}{% endblock %}
 
 {% block facebook_meta %}
-    {% trans "Candidacies" as title %}
+    {% trans "Apply" as title %}
     {% include 'core/inc/facebook_meta.html' with title=title %}
 {% endblock %}
 
 {% block breadcrumb_menu %}
     {{block.super}}
     <li class="breadcrumb__item active">
-        {% trans "Candidacies" %}
+        {% trans "Apply" %}
     </li>
 {% endblock %}
 
@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block page_title %}
-  <h1 class="dotted">{% trans "Candidacies" %}</h1>
+  <h1 class="dotted">{% trans "Apply" %}</h1>
 {% endblock %}
 
 {% block page_content %}
