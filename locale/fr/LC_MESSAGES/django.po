@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2018-11-09 17:04+0000\n"
-=======
-"POT-Creation-Date: 2018-11-13 09:13+0000\n"
->>>>>>> dev
+"POT-Creation-Date: 2018-11-13 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -541,17 +537,12 @@ msgstr "Brèves"
 msgid "Media"
 msgstr "Média"
 
-<<<<<<< HEAD
-#: templates/job/candidacy_list.html:4 templates/job/candidacy_list.html:11
-#: templates/job/candidacy_list.html:18 templates/job/candidacy_list.html:27
-=======
 #: templates/job/candidacy_list.html:4
 msgid "Candidacies"
 msgstr ""
 
 #: templates/job/candidacy_list.html:11 templates/job/candidacy_list.html:18
 #: templates/job/candidacy_list.html:27
->>>>>>> dev
 msgid "Apply"
 msgstr "Candidatures"
 
