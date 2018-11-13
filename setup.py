@@ -1,20 +1,10 @@
 from setuptools import setup, find_packages
 import subprocess
 
-def get_long_desc():
-    """Use Pandoc to convert the readme to ReST for the PyPI."""
-    try:
-        return subprocess.check_output(['pandoc', '-f', 'markdown', '-t', 'rst', 'README.md'])
-    except:
-        print("WARNING: The long readme wasn't converted properly")
-
-readme = open('README.rst', 'r')
-long_desc = readme.read()
-
 setup(name='ircam-www-theme',
     version='2.0',
     description='IRCAM theme for the Mezzo CMS',
-    long_description=long_desc,
+    long_description='IRCAM theme for the Mezzo CMS',
     author='Guillaume Pellerin',
     author_email='guillaume.pellerin@ircam.fr',
     url='https://github.com/Ircam-Web/ircam-www-theme.git',
