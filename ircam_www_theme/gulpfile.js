@@ -75,7 +75,7 @@ gulp.task('main-css', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: ['../../node_modules', srcFolder + 'sass'],
+      includePaths: ['node_modules', srcFolder + 'sass'],
       precision: 10,
       importer: sassMagicImporter({
         disableImportOnce: true
