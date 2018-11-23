@@ -53,7 +53,7 @@
                     {% for object in results.object_list %}
                         {# result|classname #}
                         {% if object|classname == 'Event' %}
-                                {% include 'agenda/includes/event_search.html' %}
+                                {% include 'agenda/event/includes/event_search.html' %}
                         {% elif object|classname == 'Playlist' %}
                                 {% include 'media/inc/playlist_search.html' %}
                         {% elif object|classname == 'Product' %}

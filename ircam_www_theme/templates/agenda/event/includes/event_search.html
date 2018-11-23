@@ -5,7 +5,7 @@
 
 {% block subtitle %}
     <div class="search-box__subtitle">
-        {% include 'agenda/includes/event_date_line.html' %}
+        {% include 'agenda/event/includes/event_date_line.html' %}
         {% if object.prices.all|length > 0 and not is_archive and not object.is_full %}
             {% if object.external_id %}
                 <a class="button button--small ml1 event__meta__btn" href="{% url 'event_booking' object.slug %}">
