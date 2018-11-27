@@ -351,7 +351,7 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% with dynamic_content=object.dynamic_content_project.all object=object %}
-        {% include "core/inc/related_content.html" %}
-    {% endwith %}
+
+    {% include "core/inc/related_content_dynamic.html" %}
+
 {% endblock %}
