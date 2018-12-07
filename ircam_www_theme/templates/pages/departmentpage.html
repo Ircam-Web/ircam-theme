@@ -18,13 +18,6 @@
 {% endblock %}
 
 {% block page_content %}
-    <!--{% if page.departmentpage.sub_title %}
-        {% editable page.departmentpage.sub_title %}
-            <div class="chapo">
-                {{ page.departmentpage.sub_title }}
-            </div>
-        {% endeditable %}
-    {% endif %}-->
     {{ linked_organization_content.all }}
     {% if linked_organization_content and research_slug == page.departmentpage.slug %}
         {% include 'pages/page/includes/linked_organization_content.html' %}
@@ -38,19 +31,13 @@
 
 {% endblock %}
 
-{% block page_audio %}
-  {% with page as object %}
-      {{ block.super }}
-  {% endwith %}
-{% endblock %}
-
 {% block page_slider %}
     {% with page as object %}
         {{ block.super }}
     {% endwith %}
 {% endblock %}
 
-{% block page_video %}
+{% block multimedia %}
   {% with page as object %}
       {{ block.super }}
   {% endwith %}

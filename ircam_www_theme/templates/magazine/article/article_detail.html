@@ -80,11 +80,7 @@
   {% endwith %}
 {% endblock %}
 
-{% block page_audio %}
-    {{ block.super }}
-{% endblock %}
-
-{% block page_video %}
+{% block multimedia %}
     {{ block.super }}
 {% endblock %}
 
@@ -99,7 +95,7 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% include "core/inc/related_content_dynamic.html" with concrete_objects=related_content object=article %}
+    {{ block.super }}
 {% endblock %}
 
 {% block page_sidebar %}

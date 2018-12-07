@@ -86,19 +86,13 @@
     </div>
 {% endblock %}
 
-{% block page_audio %}
-    {% with event as object %}
-        {{ block.super }}
-    {% endwith %}
-{% endblock %}
-
 {% block page_slider %}
     {% with event as object %}
         {{ block.super }}
     {% endwith %}
 {% endblock %}
 
-{% block page_video %}
+{% block multimedia %}
     {% with event as object %}
         {{ block.super }}
     {% endwith %}
@@ -139,7 +133,5 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% with dynamic_content=event.dynamic_content_event.all object=event %}
-        {% include "core/inc/related_content.html" %}
-    {% endwith %}
+    {{ block.super }}
 {% endblock %}
