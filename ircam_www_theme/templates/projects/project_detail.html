@@ -102,19 +102,13 @@
     {% endwith %}
 {% endblock %}
 
-{% block page_audio %}
-  {% with object as object %}
-      {{ block.super }}
-  {% endwith %}
-{% endblock %}
-
 {% block page_slider %}
     {% with object as object %}
         {{ block.super }}
     {% endwith %}
 {% endblock %}
 
-{% block page_video %}
+{% block multimedia %}
   {% with object as object %}
       {{ block.super }}
   {% endwith %}
@@ -351,7 +345,5 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% with dynamic_content=object.dynamic_content_project.all object=object %}
-        {% include "core/inc/related_content.html" %}
-    {% endwith %}
+    {{ block.super }}
 {% endblock %}

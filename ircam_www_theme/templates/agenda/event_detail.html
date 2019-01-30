@@ -86,19 +86,13 @@
     </div>
 {% endblock %}
 
-{% block page_audio %}
-    {% with event as object %}
-        {{ block.super }}
-    {% endwith %}
-{% endblock %}
-
 {% block page_slider %}
     {% with event as object %}
         {{ block.super }}
     {% endwith %}
 {% endblock %}
 
-{% block page_video %}
+{% block multimedia %}
     {% with event as object %}
         {{ block.super }}
     {% endwith %}
@@ -107,7 +101,7 @@
 {% block page_person_list %}
     {% for event_person_list_block_inline in event.persons_list.all  %}
         {% with event_person_list_block_inline.person_list_block as person_list_block %}
-        {% with "network/inc/person/list_"|add:person_list_block.style|add:"_style.html" as template %}
+        {% with "network/person/includes/list_"|add:person_list_block.style|add:"_style.html" as template %}
             {% include template %}
         {% endwith %}
       {% endwith %}
@@ -125,7 +119,7 @@
         {% block event_detail_postedby %}
             {% editable event.start event.end event.location %}
                 {% with True as unit_booking %}
-                    {% include 'agenda/includes/event_metainfo.html' %}
+                    {% include 'agenda/event/includes/event_metainfo.html' %}
                 {% endwith %}
             {% endeditable %}
         {% endblock %}
@@ -139,7 +133,5 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% with dynamic_content=event.dynamic_content_event.all object=event %}
-        {% include "core/inc/related_content.html" %}
-    {% endwith %}
+    {{ block.super }}
 {% endblock %}

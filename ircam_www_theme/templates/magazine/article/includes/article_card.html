@@ -2,41 +2,23 @@
 {% load i18n pages_tags mezzanine_tags media_tags organization_tags %}
 
 {% block metatitle %}
-    {{ object.title }}
+    {{ block.super }}
 {% endblock %}
 
 {% block title %}
-    {{ object.title }}
+    {{ block.super }}
 {% endblock %}
 
 {% block url %}
-  {% if object.content|removetags:"p"|slice:':4' == 'http' %}
-    {{ object.content|removetags:"p" }}
-  {% else %}
-    {% url 'magazine-article-detail' object.slug %}
-  {% endif %}
+    {{ block.super }}
 {% endblock %}
 
 {% block target %}
-  {% if object.content|removetags:"p"|slice:':4' == 'http' %}target="_blank"{% endif %}
+    {{ block.super }}
 {% endblock %}
 
 {% block image %}
-    {% with object.images.all|get_type:'card' as images %}
-        {% if images %}
-            <figure class="article-box__image">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ MEDIA_URL }}{% thumbnail images.0.file 427 286 top=0.5 left=object.photo_alignment|get_photo_alignment %}" class="lazyload" />
-            </figure>
-        {% else %}
-            <figure class="article-box__image">
-                {% if object.department %}
-                    <div class="article-box__placeholder {{object.department.name|slugify}}"></div>
-                {% else %}
-                    <div class="article-box__placeholder"></div>
-                {% endif %}
-            </figure>
-        {% endif %}
-    {% endwith %}
+    {{ block.super }}
 {% endblock %}
 
 {% block tags %}
@@ -53,7 +35,7 @@
 {% endblock %}
 
 {% block content %}
-    {{ object.description|richtext_filters|safe|truncatechars_html:200 }}
+    {{ block.super }}
 {% endblock %}
 
 {% block subtitle %}

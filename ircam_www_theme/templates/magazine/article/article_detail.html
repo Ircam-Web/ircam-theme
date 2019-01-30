@@ -80,18 +80,14 @@
   {% endwith %}
 {% endblock %}
 
-{% block page_audio %}
-    {{ block.super }}
-{% endblock %}
-
-{% block page_video %}
+{% block multimedia %}
     {{ block.super }}
 {% endblock %}
 
 {% block page_person_list %}
     {% for article_custom_person_list_block_inline in article.article_person_list_block_inlines.all  %}
       {% with article_custom_person_list_block_inline.person_list_block as person_list_block %}
-        {% with "network/inc/person/list_"|add:person_list_block.style|add:"_style.html" as template %}
+        {% with "network/person/includes/list_"|add:person_list_block.style|add:"_style.html" as template %}
           {% include template %}
         {% endwith %}
       {% endwith %}
@@ -99,7 +95,7 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% include "core/inc/related_content_dynamic.html" with concrete_objects=related_content object=article %}
+    {{ block.super }}
 {% endblock %}
 
 {% block page_sidebar %}
