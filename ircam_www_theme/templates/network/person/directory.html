@@ -1,0 +1,37 @@
+{% extends "pages/page.html" %}
+{% load i18n mezzanine_tags event_tags keyword_tags disqus_tags organization_tags staticfiles pages_tags %}
+
+{% block meta_title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block meta_keywords %}
+    {{ block.super }}
+{% endblock %}
+
+{% block meta_description %}
+    {{ block.super }}
+{% endblock %}
+
+{% block facebook_meta %}   
+{{ block.super }}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    coucou
+    {% for person in persons.object_list %}
+        {{ person }}<br>
+    {% endfor %}
+
+    <br>coucou
+    {% for letter, link in letters_pagination.items %}
+        {{ letter }}
+   
+    {% endfor %}
+  
+
+{% endblock %}
