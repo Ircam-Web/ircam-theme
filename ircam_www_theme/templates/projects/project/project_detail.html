@@ -68,9 +68,9 @@
 {% endblock %}
 
 {% block page_content %}
-    {% if object.project.content %}
-        {% editable object.project.content %}
-            {{ object.project.content|richtext_filters|safe }}
+    {% if object.content %}
+        {% editable object.content %}
+            {{ object.content|richtext_filters|safe }}
         {% endeditable %}
     {% endif %}
 {% endblock %}
@@ -268,7 +268,7 @@
         </div>
     {% endif %}
 
-    {% with object.project.blocks.all as blocks %}
+    {% with object.blocks.all as blocks %}
         {% include "projects/inc/project_block.html" %}
     {% endwith %}
 {% endblock %}
