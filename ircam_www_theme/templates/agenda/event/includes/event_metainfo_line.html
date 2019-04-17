@@ -12,16 +12,11 @@
     <div class="page__meta-title">{{ event.location.title }}</div>
 {% endif %}
 
-{% if unit_booking %}
-
-    {% if event.prices.all and not is_archive and not event.is_full %}
-        <p>
-            {% if event.external_id %}
-                <a class="button mt1" href="{% url 'event_booking' event.slug %}" class="event__meta__btn">
-                    {% trans "Reserve" %}
-                </a>
-            {% endif %}
-        </p>
-    {% endif %}
-
+{% if event.reserve_button %}
+    <p>
+        <a class="button mt1 event__meta__btn" href="{{ event.reserve_button.url }}">
+            {{ event.reserve_button.label }}
+        </a>
+    </p>
 {% endif %}
+

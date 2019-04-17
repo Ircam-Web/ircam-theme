@@ -48,13 +48,9 @@
 {% endblock %}
 
 {% block btn %}
-    {% with object.prices.all as prices %}
-        {% if prices|length > 0 and not object.is_full %}
-            <div class="article-box__btn">
-                {% if object.external_id %}
-                    <object><a href="{% url 'event_booking' content.content_object.slug %}" class="button button--small mr0">{% trans "Reserve" %}</a></object>
-                {% endif %}
-            </div>
-        {% endif %}
-    {% endwith %}
+    {% if object.reserve_button %}
+        <div class="article-box__btn">
+            <object><a href="{{ object.reserve_button.url }}" class="button button--small mr0">{{ object.reserve_button.label }}</a></object>
+        </div>
+    {% endif %}
 {% endblock %}
