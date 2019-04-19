@@ -63,13 +63,4 @@
         {{ event.no_price_comments|richtext_filters|safe }}
     </p>
     {% endif %}
-
-    {% if event.reserve_button %}
-        <p>
-            <a class="button button--block event__meta__btn" href="">
-                {{ event.reserve_button.label }}
-            </a>
-        </p>
-    {% endif %}
-
 {% endwith %}
