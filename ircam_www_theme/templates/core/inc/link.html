@@ -1,6 +1,10 @@
 {% load mezzanine_tags i18n %}
-<ul class="unstyled-list fss">
-    {% for link in links %}
-      <li><a href="{{ link.url }}" title="{{ link.link_type.name }}"  target="_blank"><i class="fa fa-{{ link.link_type.slug }}"></i> {% firstof link.title link.url%}</a></li>
-    {% endfor %}
-</ul>
+{% if not links|get_type_link:"vel" or not links.count == 1 %}
+    <ul class="unstyled-list fss">
+        {% for link in links %}
+            {% if not link.link_type.slug == "vel" %}
+                <li><a href="{{ link.url }}" title="{{ link.link_type.name }}"    target="_blank"><i class="fa fa-{{ link.link_type.slug }}"></i> {% firstof link.title link.url%}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
