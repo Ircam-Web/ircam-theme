@@ -50,7 +50,7 @@
 {% block btn %}
     {% if object.reserve_button %}
         <div class="article-box__btn">
-            <object><a href="{{ object.reserve_button.url }}" class="button button--small mr0">{{ object.reserve_button.label }}</a></object>
+            <object><a href="{{ object.reserve_button.url }}" class="button button--small mr0" target="{{ object.reserve_button.target }}">{{ object.reserve_button.label }}</a></object>
         </div>
     {% endif %}
 {% endblock %}

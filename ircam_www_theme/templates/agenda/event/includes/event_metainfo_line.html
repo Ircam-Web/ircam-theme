@@ -14,7 +14,7 @@
 
 {% if event.reserve_button %}
     <p>
-        <a class="button mt1 event__meta__btn" href="{{ event.reserve_button.url }}">
+        <a class="button mt1 event__meta__btn" href="{{ event.reserve_button.url }}" target="{{ event.reserve_button.target }}">
             {{ event.reserve_button.label }}
         </a>
     </p>

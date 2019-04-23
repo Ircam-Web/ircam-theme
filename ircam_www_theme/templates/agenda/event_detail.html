@@ -124,7 +124,7 @@
         {% block button_reserve %}
             {% if event.reserve_button %}
                 <p>
-                    <a class="button button--block event__meta__btn {% if event.is_free %}button--disable{% endif %}" href="{{ event.reserve_button.url }}">
+                    <a class="button button--block event__meta__btn {% if event.is_free %}button--disable{% endif %}" href="{{ event.reserve_button.url }}" target="{{ event.reserve_button.target }}">
                         {{ event.reserve_button.label }}
                     </a>
                 </p>

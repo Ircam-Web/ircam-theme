@@ -21,7 +21,7 @@
             </div>
             {% if event.reserve_button %}
                 <div class="split-right">
-                    <a href="{{ event.reserve_button.url }}" class="btn">
+                    <a href="{{ event.reserve_button.url }}" class="btn" target="{{ event.reserve_button.target }}">
                         <i class="icon icon__bookmark"></i> {{ event.reserve_button.label }}
                     </a>
                 </div>
