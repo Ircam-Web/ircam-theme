@@ -6,12 +6,10 @@
 {% block subtitle %}
     <div class="search-box__subtitle">
         {% include 'agenda/event/includes/event_date_line.html' %}
-        {% if object.prices.all|length > 0 and not is_archive and not object.is_full %}
-            {% if object.external_id %}
-                <a class="button button--small ml1 event__meta__btn" href="{% url 'event_booking' object.slug %}">
-                    {% trans "Reserve" %}
-                </a>
-            {% endif %}
+        {% if object.reserve_button %}
+            <a class="button button--small ml1 event__meta__btn" href="{{ object.reserve_button.url }}" target="{{ object.reserve_button.target }}">
+                {{ object.reserve_button.label }}
+            </a>
         {% endif %}
     </div>
 {% endblock %}

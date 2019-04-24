@@ -40,38 +40,27 @@
         </p>
 {% endif %}
 
-{% if unit_booking %}
-    {% with event.prices.all as prices %}
-        {% if prices %}
-            {% if prices.0|floatformat != '0' %}
-                {% for price in prices %}
-                    {% if forloop.first %}
-                        <div class="page__meta-title page__meta-title--small">{% trans "Prices" %}</div>
-                        <p class="page__meta-text">
-                    {% endif %}
-                    {% if price.event_price_description.description %}
-                        {{ price.event_price_description.description|safe }} :
-                    {% endif %}
-                    {{ price.value|floatformat:"-2" }} {{ price.unit }} {% if not forloop.last %} <br /> {% endif %}
-                    {% if forloop.last %}
-                        </p>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-        {% endif %}
-        {% if event.no_price_comments %}
-        <p>
-            {{ event.no_price_comments|richtext_filters|safe }}
-        </p>
-        {% endif %}
-        {% if prices and not event.is_full %}
-            <p>
-                {% if event.external_id %}
-                    <a class="button button--block" href="{% url 'event_booking' event.slug %}" class="event__meta__btn">
-                        {% trans "Reserve" %}
-                    </a>
+{% with event.prices.all as prices %}
+    {% if prices %}
+        {% if prices.0|floatformat != '0' %}
+            {% for price in prices %}
+                {% if forloop.first %}
+                    <div class="page__meta-title page__meta-title--small">{% trans "Prices" %}</div>
+                    <p class="page__meta-text">
                 {% endif %}
-            </p>
+                {% if price.event_price_description.description %}
+                    {{ price.event_price_description.description|safe }} :
+                {% endif %}
+                {{ price.value|floatformat:"-2" }} {{ price.unit }} {% if not forloop.last %} <br /> {% endif %}
+                {% if forloop.last %}
+                    </p>
+                {% endif %}
+            {% endfor %}
         {% endif %}
-    {% endwith %}
-{% endif %}
+    {% endif %}
+    {% if event.no_price_comments %}
+    <p>
+        {{ event.no_price_comments|richtext_filters|safe }}
+    </p>
+    {% endif %}
+{% endwith %}

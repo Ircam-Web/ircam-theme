@@ -115,4 +115,9 @@ $module: ".button";
 
     }
 
+    &--disable {
+        pointer-events: none;
+        cursor: default;
+    }
+
 }
