@@ -1,4 +1,4 @@
-{% load mezzanine_tags i18n %}
+{% load mezzanine_tags i18n organization_tags %}
 {% if not links|get_type_link:"vel" or not links.count == 1 %}
     <ul class="unstyled-list fss">
         {% for link in links %}
