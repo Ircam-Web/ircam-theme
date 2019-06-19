@@ -14,3 +14,16 @@
 .select2-container {
     min-width: 70em;
 }
+
+.auth-group .selector-available,
+.auth-group .selector-chosen {
+    width: 500px;
+}
+
+.auth-group .selector select[multiple="multiple"] {
+    width: 500px;
+}
+
+.auth-group .selector {
+    width: auto;
+}
