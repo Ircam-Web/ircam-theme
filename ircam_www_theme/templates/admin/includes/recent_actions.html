@@ -38,7 +38,7 @@
                 <td>{{ entry.user }}</td>
                 <td><i class="fa fa-{{ entry.action_flag|get_action_name }}"></i></td>
                 <td>{{ entry.content_type }}</td>
-                <td>{% if not entry.is_deletion %}<a href="{{ entry.get_admin_url }}">{% endif %}{{ entry.object_repr }}{% if not entry.is_deletion %}</a>{% endif %}</td>
+                <td>{% if not entry.is_deletion %}<a href="{{ entry.get_admin_url }}">{% endif %}{{ entry.object_repr|truncatechars_html:60 }}{% if not entry.is_deletion %}</a>{% endif %}</td>
             </tr>
             {% endfor %}
             </table>
