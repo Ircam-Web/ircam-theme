@@ -22,6 +22,11 @@
 
 .auth-group .selector select[multiple="multiple"] {
     width: 500px;
+    height: 700px;
+}
+
+.auth-group .selector .selector-chosen select[multiple="multiple"] {
+    height: 732px;
 }
 
 .auth-group .selector {
