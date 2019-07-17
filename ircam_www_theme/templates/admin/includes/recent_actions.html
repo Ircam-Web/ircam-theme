@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n organization_tags %}
 
 <div class="module" id="recent-actions-module">
     <h2>{% trans 'Recent Actions' %}</h2>
@@ -16,3 +16,33 @@
         {% endif %}
 </div>
 
+{% if user.is_superuser %}
+    <div class="module" id="recent-actions-module">
+        <h2>{% trans 'All Recent Actions' %}</h2>
+            {% load log %}
+            {% get_admin_log 20 as admin_log %}
+            {% if not admin_log %}
+            <p>{% trans 'None available' %}</p>
+            {% else %}
+            <table class="actionlist" style="margin:0;" border="1">
+            <tr>
+                <th>{% trans 'Date' %}</th>
+                <th>{% trans 'User' %}</th>
+                <th>{% trans 'Action' %}</th>
+                <th>{% trans 'Content Type' %}</th>
+                <th>{% trans 'Content' %}</th>
+            </tr>
+            {% for entry in admin_log %}
+            <tr>
+                <td>{{ entry.action_time}}</td>
+                <td>{{ entry.user }}</td>
+                <td><i class="fa fa-{{ entry.action_flag|get_action_name }}"></i></td>
+                <td>{{ entry.content_type }}</td>
+                <td>{% if not entry.is_deletion %}<a href="{{ entry.get_admin_url }}">{% endif %}{{ entry.object_repr|truncatechars_html:60 }}{% if not entry.is_deletion %}</a>{% endif %}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            {% endif %}
+    </div>
+{% endif %}
+ 
