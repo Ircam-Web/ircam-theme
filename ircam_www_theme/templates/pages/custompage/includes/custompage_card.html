@@ -24,3 +24,15 @@
 {% block subtitle %}
     {{ block.super }}
 {% endblock %}
+
+{% block btn %}
+    {% with object.links|get_type_link:'card_button' as links %}
+        {% if links %}
+            {% with links.first as link %}
+            <div class="article-box__btn">
+                <object><a href="{{ link.url }}" class="button button--small mr0" target="_blank">{{ link.title }}</a></object>
+            </div>
+            {% endwith %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
