@@ -1,6 +1,10 @@
 {% extends "ircam_www/base.html" %}
-{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n  disqus_tags event_tags organization_tags %}
+{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n  disqus_tags event_tags organization_tags staticfiles %}
 
 {% block main %}
-    <iframe width="100%" height="1700px" scrolling="auto" src="{{ shop_url }}" frameborder="0" allowfullscreen=""></iframe>
+    <iframe id="shop-iframe" width="100%" height="1700px" scrolling="auto" src="{{ shop_url }}" frameborder="0" allowfullscreen=""></iframe>
+{% endblock %}
+
+{% block extra_footer %}
+    <script src='{% static "ircam_www/js/iframe_reloader.js" %}'></script>
 {% endblock %}
