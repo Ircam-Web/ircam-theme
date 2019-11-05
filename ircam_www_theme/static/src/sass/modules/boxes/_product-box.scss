@@ -47,6 +47,7 @@ $module: ".product-box";
         @include typeface(serif);
         @include margin(1 0 .25 0);
         font-weight: weight(light);
+        height: 4.5em;
 
     }
 
@@ -54,8 +55,10 @@ $module: ".product-box";
 
         @include padding(.5);
 
-        height: 150px;
+    }
 
+    .button {
+        margin-right: 1em;
     }
 
     &:after {
