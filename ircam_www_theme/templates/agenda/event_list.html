@@ -45,7 +45,7 @@
                         {% elif is_archive %}
                             {% trans 'Archives' %}
                         {% else %}
-                            {{ page.title }}
+                            Agenda
                         {% endif %}
                     </h1>
                 </div>
@@ -54,14 +54,6 @@
             <div class="row">
                 <div class="col-sm-3 col-lg-2 page__sidebar">
                     <div style="position: relative;" >
-                        {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
-                        <a class="banner banner--light banner--sidebar hide-until-sm" href="{% url 'event_list_tag' 'tournees' %}" style="background-image:url({% static 'img/services/tours.jpg' %});">
-                            <div class="banner__content">
-                                <div class="banner__title fsxxxl">{% trans "On tour" %} {{ current_season_styled }}
-                                </div>
-                            </div>
-                        </a>
-                        {% endif %}
                         <div class="nav-tree-wrapper" data-sticky data-sticky-parent="row" data-sticky-offset="100" data-sticky-detach-at="971">
                             {% page_menu "pages/menus/current_tree_event.html" %}
 

@@ -25,7 +25,8 @@ $module: ".breadcrumb";
     list-style-type: none;
     margin: 0;
     padding: 0;
-
+    text-transform: lowercase;
+    
     background: white;
     @include padding(0 1);
 

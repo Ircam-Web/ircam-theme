@@ -24,38 +24,13 @@
                     {% with host_organization.images|get_type:"logo_footer" as images %}
                       {% if images %}
                        {% with images|first as img %}
-                        <img src="{{ MEDIA_URL }}{{ img }}" title="{{ img.title }}" width="151" />
+                        <img src="{{ MEDIA_URL }}{{ img }}" title="{{ img.title }}" width="100" />
                        {% endwith %}
                       {% endif %}
                     {% endwith %}
                 </a>
             </div>
-            <div class="col-xs-3 col-sm-2 col-sm-push-1 tar-sm tal fsm">
-                <strong>{{ host_organization.name }}</strong><br />
-                <br />
-                {{ host_organization.address }}<br />
-                {{ host_organization.postal_code }} {{ host_organization.city }}<br />
-                {% if host_organization.telephone %}T. {{ host_organization.telephone }}{% endif %}
-            </div>
-            <div class="col-xs-3 col-sm-2 col-sm-push-1 tar-sm tal fsm">
-                <strong>{% trans 'Opening times' %}</strong><br />
-                <br />
-                {{ host_organization.opening_times|safe }}
-            </div>
-            <div class="col-xs-3 col-sm-2 col-sm-push-1 tar-sm tal fsm">
-                <strong>{% trans 'Subway access' %}</strong><br />
-                <br />
-                {{ host_organization.subway_access|safe }}
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-sm-10 col-sm-push-1">
-                <div class="footer__separator"></div>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-xs-4 col-sm-3 col-sm-push-1 tal">
                 {% page_menu "pages/menus/footer_vertical.html" %}
             </div>
@@ -69,7 +44,6 @@
             </div>
 
             <div class="col-xs-4 col-sm-2 col-sm-push-1 tal">
-                {% trans 'go to' %} :
                 {% if linked_organization_footer_2 %}
                     {% include 'pages/page/includes/linked_organization_footer_2.html' %}
                 {% endif %}
@@ -83,10 +57,10 @@
         </div>
 
         <div class="row">
-            <div class="col-xxs-12 col-xs-8 col-sm-7 col-sm-push-1">
+            <div class="col-xxs-12 col-xs-8 col-sm-5 col-sm-push-1">
                 {% page_menu "pages/menus/footer_horizontal.html" %}
             </div>
-            <div class="col-xxs-12 col-xs-4 col-sm-3 col-sm-push-1 tar-xs tal-xxs">
+            <div class="col-xxs-12 col-xs-4 col-sm-5 col-sm-push-1 tar-xs tal-xxs">
                 Copyright &copy; {% current_year %} {{ host_organization.name }}. {% trans "All rights reserved" %}.
             </div>
         </div>
