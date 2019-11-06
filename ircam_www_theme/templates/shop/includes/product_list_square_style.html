@@ -21,26 +21,22 @@
                                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
                                     <div class="product-box" >
                                         {% if product.images.all %}
-                                            <a href="{{ links.0 }}" target="_blank" title="{{ product.title }}">
                                                 <figure class="product-box__image">
                                                     <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ MEDIA_URL }}{% thumbnail product.images.all.0 640 200 top=0.5 %}" alt="product"/>
                                                 </figure>
-                                            </a>
                                         {% endif %}
                                         <div class="product-box__content tal">
-                                            <a href="{{ links.0 }}" target="_blank" title="{{ product.title }}"><h3 class="product-box__title">{{ product.title }}</h3></a>
+                                            <h3 class="product-box__title">{{ product.title }}</h3>
                                             {% if product.description %}
-                                                <div class="product-box__desc">{{ product.description|richtext_filters|safe|truncatechars_html:100 }}</div>
-                                            {% elif product.content %}
-                                                <div class="product-box__desc">{{ product.content|richtext_filters|safe|truncatechars_html:100 }}</div>
+                                                <div class="product-box__desc">{{ product.description|richtext_filters|safe|truncatechars_html:350 }}</div>
                                             {% endif %}
                                             <div>
                                                 {% if product|has_shop %}   
                                                     <a href="{% url 'custom_shop_product' product.slug %}" class="button button--small mr0">{{ product.product_external_shop.label }}</a>
                                                 {% endif %}
-                                                {% if links.0 %}
-                                                    <a href="{{ links.0.url }}" class="button button--small mr0" target="_blank">{{ links.0.title }}</a>
-                                                {% endif %}
+                                                {% for link in links %}
+                                                    <a href="{{ link.url }}" class="button button--small mr0" target="_blank">{{ link.title }}</a>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                     </div>
