@@ -26,7 +26,12 @@
                                                 </figure>
                                         {% endif %}
                                         <div class="product-box__content tal">
-                                            <h3 class="product-box__title">{{ product.title }}</h3>
+                                            <div class="product-box__header clearfix">
+                                                <h3 class="product-box__title pull-left">{{ product.title }}</h3>
+                                                <div class="tag tag--small tag--category pull-left product-box__category">
+                                                    {{ product.p_keywords.first.title }}
+                                                </div>
+                                            </div>
                                             {% if product.description %}
                                                 <div class="product-box__desc">{{ product.description|richtext_filters|safe|truncatechars_html:350 }}</div>
                                             {% endif %}
