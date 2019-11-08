@@ -36,7 +36,7 @@ $module: ".product-box";
         @include font-size(xxl);
         @include line-height(2);
         @include typeface(sans-serif);
-        @include margin(0 0 1 0);
+        @include margin(0 0 0.3 0);
 
     }
 
@@ -79,8 +79,4 @@ $module: ".product-box";
         height: 3.1rem;
     }
 
-    &__category {
-        margin-top: 1rem;
-        margin-left: 1rem;
-    }
 }
