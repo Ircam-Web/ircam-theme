@@ -50,16 +50,16 @@ $module: ".nav-actions";
 
         }
 
-        &:last-child:not(:only-child) {
-            color: $ressources;
-        }
+        // &:last-child:not(:only-child) {
+        //     color: $ressources;
+        // }
 
-        &:last-child:not(:only-child):before  {
-            color: white;
-            content: '|';
-            display: inline-block;
-            margin-right: 1.4rem;
-        }
+        // &:last-child:not(:only-child):before  {
+        //     color: white;
+        //     content: '|';
+        //     display: inline-block;
+        //     margin-right: 1.4rem;
+        // }
 
     }
 
@@ -122,12 +122,12 @@ $module: ".nav-actions";
 
         }
 
-        &__item {
-            &:last-child:not(:only-child):before  {
-                content: '';
-                display: block;
-            }
-        }
+        // &__item {
+        //     &:last-child:not(:only-child):before  {
+        //         content: '';
+        //         display: block;
+        //     }
+        // }
 
 
 
