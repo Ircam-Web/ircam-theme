@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 10:40+0000\n"
+"POT-Creation-Date: 2019-12-16 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,11 +278,12 @@ msgid "Confirmation"
 msgstr "Confirmation"
 
 #: templates/agenda/event_list.html:8 templates/agenda/event_list.html:29
+#: templates/agenda/event_list.html:67 templates/agenda/event_list.html:124
 msgid "Rendez-vous in Paris"
 msgstr "Rendez-vous à Paris"
 
-#: templates/agenda/event_list.html:44 templates/agenda/event_list.html:57
-#: templates/agenda/event_list.html:106
+#: templates/agenda/event_list.html:44 templates/agenda/event_list.html:58
+#: templates/agenda/event_list.html:115
 msgid "On tour"
 msgstr "En tournées"
 
@@ -524,40 +525,19 @@ msgstr "Imprimer cette page"
 msgid "Add to"
 msgstr "Ajouter à"
 
-#: templates/includes/sidebar.html:10 templates/index.html:33
+#: templates/includes/sidebar.html:10 templates/index.html:30
 #: templates/magazine/topic/topic_detail.html:5
 #: templates/magazine/topic/topic_detail.html:34
 msgid "Magazine"
 msgstr "Magazine"
 
-#: templates/includes/sidebar.html:14 templates/index.html:53
+#: templates/includes/sidebar.html:14
 msgid "Medias"
 msgstr "Medias"
 
-#: templates/index.html:30
-msgid "News Headlines"
-msgstr "À la une"
-
-#: templates/index.html:43
-msgid "Brief"
-msgstr "Brève"
-
-#: templates/index.html:43
-msgid "Briefs"
-msgstr "Brèves"
-
-#: templates/index.html:53 templates/media/audio/audio_detail.html:4
-#: templates/media/audio/audio_detail.html:32
-#: templates/media/media/includes/media_card.html:17
-#: templates/media/playlist/playlist_list.html:6
-#: templates/media/playlist/playlist_list.html:11
-#: templates/media/playlist/playlist_list.html:15
-#: templates/media/playlist_detail.html:4
-#: templates/media/playlist_detail.html:21
-#: templates/media/video/video_detail.html:4
-#: templates/media/video/video_detail.html:32
-msgid "Media"
-msgstr "Média"
+#: templates/index.html:31
+msgid "all articles"
+msgstr "tous les articles"
 
 #: templates/job/candidacy_list.html:4
 msgid "Candidacies"
@@ -621,6 +601,19 @@ msgstr "Brève !"
 #: templates/magazine/topic/topic_detail.html:28
 msgid "Articles"
 msgstr "Articles"
+
+#: templates/media/audio/audio_detail.html:4
+#: templates/media/audio/audio_detail.html:32
+#: templates/media/media/includes/media_card.html:17
+#: templates/media/playlist/playlist_list.html:6
+#: templates/media/playlist/playlist_list.html:11
+#: templates/media/playlist/playlist_list.html:15
+#: templates/media/playlist_detail.html:4
+#: templates/media/playlist_detail.html:21
+#: templates/media/video/video_detail.html:4
+#: templates/media/video/video_detail.html:32
+msgid "Media"
+msgstr "Média"
 
 #: templates/media/audio/inc/audio_search.html:20
 #: templates/media/inc/playlist_search.html:39
@@ -1106,6 +1099,15 @@ msgstr ""
 #: templates/twitter/tweets.html:7
 msgid "Recent Tweets"
 msgstr "Tweets récents"
+
+#~ msgid "News Headlines"
+#~ msgstr "À la une"
+
+#~ msgid "Brief"
+#~ msgstr "Brève"
+
+#~ msgid "Briefs"
+#~ msgstr "Brèves"
 
 #~ msgid "Reserve"
 #~ msgstr "Réserver"
