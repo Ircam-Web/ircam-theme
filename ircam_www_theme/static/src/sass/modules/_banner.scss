@@ -131,6 +131,8 @@ $module: ".banner";
         @include margin-bottom(2);
         height: 59px;
         width: 252px;
+        background-size: 99%;
+        background-position-y: -61px;
 
         #{$module}__title {
 
