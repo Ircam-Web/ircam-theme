@@ -127,9 +127,10 @@ $module: ".banner";
 
     &--sidebar {
 
-        margin-top: 0;
+        margin-top: 1.4rem;
         @include margin-bottom(2);
-        height: 150px;
+        height: 59px;
+        width: 252px;
 
         #{$module}__title {
 
@@ -139,8 +140,16 @@ $module: ".banner";
 
         #{$module}__content {
 
-            @include padding(1);
+            @include padding(0.3);
 
+            @include mq($until: sm) {
+                @include padding(2);
+            }
+        }
+
+        @include mq($until: sm) {
+            height: 150px;
+            width: 100%;
         }
 
     }
@@ -187,6 +196,7 @@ $module: ".banner";
         font-weight: weight(bold);
         display: inline-block;
         position: relative;
+        @include font-size(xxl);
 
         @include margin(0 0 1 0);
 
@@ -212,6 +222,10 @@ $module: ".banner";
                 background: white;
             }
 
+        }
+
+        @include mq($until: sm) {
+            @include font-size(xxxl);
         }
 
     }

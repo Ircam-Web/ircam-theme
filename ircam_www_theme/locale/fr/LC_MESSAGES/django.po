@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 10:20+0000\n"
+"POT-Creation-Date: 2019-12-16 10:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,10 +122,38 @@ msgid "My Actions"
 msgstr "Mes Actions"
 
 #: templates/admin/includes/recent_actions.html:9
+#: templates/admin/includes/recent_actions.html:25
 msgid "None available"
 msgstr ""
 
-#: templates/admin/index.html:15 templates/includes/footer.html:23
+#: templates/admin/includes/recent_actions.html:21
+msgid "All Recent Actions"
+msgstr ""
+
+#: templates/admin/includes/recent_actions.html:29
+#: templates/shop/order_history.html:19
+msgid "Date"
+msgstr ""
+
+#: templates/admin/includes/recent_actions.html:30
+msgid "User"
+msgstr ""
+
+#: templates/admin/includes/recent_actions.html:31
+#, fuzzy
+#| msgid "My Actions"
+msgid "Action"
+msgstr "Mes Actions"
+
+#: templates/admin/includes/recent_actions.html:32
+msgid "Content Type"
+msgstr ""
+
+#: templates/admin/includes/recent_actions.html:33
+msgid "Content"
+msgstr ""
+
+#: templates/admin/index.html:18 templates/includes/footer.html:23
 #: templates/index.html:5 templates/index.html:15
 #: templates/pages/menus/breadcrumb.html:4
 #: templates/pages/menus/breadcrumb.html:10
@@ -135,11 +163,12 @@ msgstr ""
 #: templates/pages/menus/footer_tree.html:11
 #: templates/pages/menus/header.html:15 templates/pages/menus/mobile.html:10
 #: templates/pages/menus/primary.html:8
-#: templates/projects/project_detail.html:82 templates/search_results.html:13
+#: templates/projects/project/project_detail.html:82
+#: templates/search_results.html:13
 msgid "Home"
 msgstr "Accueil"
 
-#: templates/admin/index.html:17
+#: templates/admin/index.html:20
 msgid "Dashboard"
 msgstr ""
 
@@ -156,7 +185,7 @@ msgid "Password:"
 msgstr ""
 
 #: templates/admin/login.html:42
-#: templates/agenda/includes/event_metainfo.html:23
+#: templates/agenda/event/includes/event_metainfo.html:23
 msgid "Language"
 msgstr "Langue"
 
@@ -176,13 +205,72 @@ msgstr ""
 msgid "Forgot password?"
 msgstr ""
 
-#: templates/agenda/event/includes/event_card.html:71
-#: templates/agenda/includes/event_metainfo.html:72
-#: templates/agenda/includes/event_metainfo_line.html:21
-#: templates/agenda/includes/event_metainfo_slider.html:25
-#: templates/agenda/includes/event_search.html:12
-msgid "Reserve"
-msgstr "Réserver"
+#: templates/agenda/event/includes/event_date_line.html:10
+#: templates/job/inc/candidacy_card.html:22
+#: templates/network/person_detail_multiple_activities.html:78
+#: templates/network/person_detail_multiple_activities.html:82
+msgid "to"
+msgstr "au"
+
+#: templates/agenda/event/includes/event_date_slider.html:31
+#: templates/agenda/event/includes/event_date_slider.html:47
+#: templates/agenda/event/includes/event_dates.html:35
+msgid "and"
+msgstr "et"
+
+#: templates/agenda/event/includes/event_date_slider.html:45
+#: templates/agenda/event/includes/event_date_slider.html:52
+msgid "through"
+msgstr "au"
+
+#: templates/agenda/event/includes/event_location.html:7
+msgid "Room"
+msgstr "Salle"
+
+#: templates/agenda/event/includes/event_location.html:13
+msgid "Click to get the interactive map"
+msgstr "Cliquer pour voir la carte interactive"
+
+#: templates/agenda/event/includes/event_location.html:15
+#: templates/agenda/event_location_detail.html:40
+msgid "Viewing events for the location"
+msgstr "Événements du lieu"
+
+#: templates/agenda/event/includes/event_metainfo.html:30
+msgid "Level"
+msgstr "Niveau"
+
+#: templates/agenda/event/includes/event_metainfo.html:36
+#: templates/core/inc/files.html:3
+msgid "Downloads"
+msgstr "Téléchargements"
+
+#: templates/agenda/event/includes/event_metainfo.html:49
+msgid "Prices"
+msgstr "Prix"
+
+#: templates/agenda/event/includes/filter_panel.html:6
+msgid "Upcoming Events"
+msgstr "Événements à venir"
+
+#: templates/agenda/event/includes/filter_panel.html:22
+msgid "Recent Events"
+msgstr "Événements récents"
+
+#: templates/agenda/event/includes/filter_panel.html:38
+msgid "Archive"
+msgstr "Archive"
+
+#: templates/agenda/event/includes/filter_panel.html:58
+#: templates/agenda/event_location_list.html:4
+#: templates/agenda/event_location_list.html:19
+#: templates/agenda/event_location_list.html:28
+msgid "Locations"
+msgstr "Lieux"
+
+#: templates/agenda/event/includes/filter_panel.html:74
+msgid "Tags"
+msgstr "Mots clés"
 
 #: templates/agenda/event_booking_confirmation.html:4
 #: templates/agenda/event_booking_confirmation.html:12
@@ -193,88 +281,20 @@ msgstr "Confirmation"
 msgid "Rendez-vous in Paris"
 msgstr "Rendez-vous à Paris"
 
-#: templates/agenda/event_list.html:44 templates/agenda/event_list.html:60
-#: templates/agenda/event_list.html:103
+#: templates/agenda/event_list.html:44 templates/agenda/event_list.html:57
+#: templates/agenda/event_list.html:106
 msgid "On tour"
-msgstr "Tournées"
+msgstr "En tournées"
 
 #: templates/agenda/event_list.html:46
 msgid "Archives"
 msgstr "Archives"
-
-#: templates/agenda/event_location_detail.html:40
-#: templates/agenda/includes/event_location.html:15
-msgid "Viewing events for the location"
-msgstr "Événements du lieu"
-
-#: templates/agenda/event_location_list.html:4
-#: templates/agenda/event_location_list.html:19
-#: templates/agenda/event_location_list.html:28
-#: templates/agenda/includes/filter_panel.html:58
-msgid "Locations"
-msgstr "Lieux"
-
-#: templates/agenda/includes/event_date_line.html:10
-#: templates/job/inc/candidacy_card.html:22
-#: templates/network/person_detail_multiple_activities.html:78
-#: templates/network/person_detail_multiple_activities.html:82
-msgid "to"
-msgstr "au"
-
-#: templates/agenda/includes/event_date_slider.html:31
-#: templates/agenda/includes/event_date_slider.html:47
-#: templates/agenda/includes/event_dates.html:35
-msgid "and"
-msgstr "et"
-
-#: templates/agenda/includes/event_date_slider.html:45
-#: templates/agenda/includes/event_date_slider.html:52
-msgid "through"
-msgstr "au"
-
-#: templates/agenda/includes/event_location.html:7
-msgid "Room"
-msgstr "Salle"
-
-#: templates/agenda/includes/event_location.html:13
-msgid "Click to get the interactive map"
-msgstr "Cliquer pour voir la carte interactive"
-
-#: templates/agenda/includes/event_metainfo.html:30
-msgid "Level"
-msgstr "Niveau"
-
-#: templates/agenda/includes/event_metainfo.html:36
-#: templates/core/inc/files.html:3
-msgid "Downloads"
-msgstr "Téléchargements"
-
-#: templates/agenda/includes/event_metainfo.html:50
-msgid "Prices"
-msgstr "Prix"
-
-#: templates/agenda/includes/filter_panel.html:6
-msgid "Upcoming Events"
-msgstr "Événements à venir"
-
-#: templates/agenda/includes/filter_panel.html:22
-msgid "Recent Events"
-msgstr "Événements récents"
-
-#: templates/agenda/includes/filter_panel.html:38
-msgid "Archive"
-msgstr "Archive"
-
-#: templates/agenda/includes/filter_panel.html:74
-msgid "Tags"
-msgstr "Mots clés"
 
 #: templates/core/inc/facebook_meta.html:3
 #, python-format
 msgid "%(title)s"
 msgstr ""
 
-#: templates/core/inc/related_content.html:8
 #: templates/core/inc/related_content_dynamic.html:8
 msgid "Also discover"
 msgstr "À découvrir aussi"
@@ -427,7 +447,7 @@ msgstr ""
 
 #: templates/home/inc/slider.html:20
 #: templates/magazine/article/article_detail.html:44
-#: templates/magazine/article/includes/article_card.html:45
+#: templates/magazine/article/includes/article_card.html:27
 msgid "News"
 msgstr "Actualité"
 
@@ -529,9 +549,11 @@ msgstr "Brèves"
 #: templates/index.html:53 templates/media/audio/audio_detail.html:4
 #: templates/media/audio/audio_detail.html:32
 #: templates/media/media/includes/media_card.html:17
+#: templates/media/playlist/playlist_list.html:6
+#: templates/media/playlist/playlist_list.html:11
+#: templates/media/playlist/playlist_list.html:15
 #: templates/media/playlist_detail.html:4
-#: templates/media/playlist_detail.html:21 templates/media/playlist_list.html:6
-#: templates/media/playlist_list.html:11 templates/media/playlist_list.html:15
+#: templates/media/playlist_detail.html:21
 #: templates/media/video/video_detail.html:4
 #: templates/media/video/video_detail.html:32
 msgid "Media"
@@ -568,6 +590,10 @@ msgstr "Publié le"
 msgid "View"
 msgstr "Vue"
 
+#: templates/job/inc/job_response_form.html:4
+msgid "Send message"
+msgstr ""
+
 #: templates/job/job_offer_list.html:4 templates/job/job_offer_list.html:11
 #: templates/job/job_offer_list.html:20
 msgid "Jobs"
@@ -578,7 +604,7 @@ msgid "Please come back later. There is no job offer at the moment."
 msgstr ""
 "Merci de revenir plus tard. Il n'y a pas d'offre d'emploi pour le moment."
 
-#: templates/magazine/article/article_detail.html:109
+#: templates/magazine/article/article_detail.html:105
 #: templates/media/audio/audio_detail.html:49
 #: templates/media/video/video_detail.html:47
 msgid "Publish date"
@@ -588,7 +614,7 @@ msgstr "Date de publication"
 msgid "Article"
 msgstr ""
 
-#: templates/magazine/brief/inc/brief_card.html:6
+#: templates/magazine/brief/includes/brief_card.html:6
 msgid "Brief !"
 msgstr "Brève !"
 
@@ -607,23 +633,23 @@ msgstr "lire la suite"
 msgid "View all medias"
 msgstr "Voir tous les medias"
 
-#: templates/media/playlist_list.html:21
+#: templates/media/playlist/playlist_list.html:21
 msgid "audio"
 msgstr "audio"
 
-#: templates/media/playlist_list.html:26
+#: templates/media/playlist/playlist_list.html:26
 msgid "video"
 msgstr "vidéo"
-
-#: templates/network/inc/person/person_card_circle.html:32
-msgid "resume"
-msgstr "résumé"
 
 #: templates/network/organization_list.html:4
 #: templates/network/organization_list.html:13
 #: templates/network/organization_list.html:23
 msgid "Network"
 msgstr "Réseaux"
+
+#: templates/network/person/includes/person_card_circle.html:32
+msgid "resume"
+msgstr "résumé"
 
 #: templates/network/person_activity_timesheet/person_activity_timesheet_create.html:4
 #: templates/network/person_activity_timesheet/person_activity_timesheet_create.html:11
@@ -634,7 +660,7 @@ msgstr ""
 
 #: templates/network/person_detail.html:48
 #: templates/network/person_detail_multiple_activities.html:52
-#: templates/pages/teampage.html:133
+#: templates/pages/teampage.html:127
 msgid "Team"
 msgstr "Équipe"
 
@@ -693,11 +719,11 @@ msgstr "Projet"
 msgid "Page"
 msgstr "Page"
 
-#: templates/pages/teampage.html:90
+#: templates/pages/teampage.html:84
 msgid "Research topics and related projects"
 msgstr "Domaines de recherche et projets associés"
 
-#: templates/pages/teampage.html:101
+#: templates/pages/teampage.html:95
 msgid "European and national projects"
 msgstr "Projets nationaux et européens"
 
@@ -709,6 +735,63 @@ msgstr "Publications"
 msgid "Please login to get links to the data"
 msgstr ""
 
+#: templates/projects/project/project_detail.html:130
+msgid "Project details"
+msgstr "Détails du projet"
+
+#: templates/projects/project/project_detail.html:136
+msgid "Program"
+msgstr "Programme"
+
+#: templates/projects/project/project_detail.html:147
+msgid "Program type"
+msgstr "Type de programme"
+
+#: templates/projects/project/project_detail.html:157
+msgid "Beginning"
+msgstr "Début"
+
+#: templates/projects/project/project_detail.html:166
+msgid "End"
+msgstr "Fin"
+
+#: templates/projects/project/project_detail.html:175
+msgid "Status"
+msgstr "Statut"
+
+#: templates/projects/project/project_detail.html:185
+msgid "Website"
+msgstr "Site internet"
+
+#: templates/projects/project/project_detail.html:204
+msgid "Participants"
+msgstr "Participants"
+
+#: templates/projects/project/project_detail.html:212
+msgid "Project lead team"
+msgstr "Équipe coordinatrice"
+
+#: templates/projects/project/project_detail.html:219
+msgid "Project lead organization"
+msgstr "Organisation principale du projet"
+
+#: templates/projects/project/project_detail.html:236
+msgid "Partners"
+msgstr "Partenaires"
+
+#: templates/projects/project/project_detail.html:251
+msgid "teams"
+msgstr ""
+
+#: templates/projects/project/project_detail.html:286
+#: templates/projects/project_demo_detail.html:22
+msgid "Demos"
+msgstr "Demos"
+
+#: templates/projects/project/project_detail.html:308
+msgid "Blog Pages"
+msgstr ""
+
 #: templates/projects/project_blogpage_detail.html:4
 #: templates/projects/project_demo_detail.html:4
 msgid "Demo"
@@ -718,66 +801,9 @@ msgstr "Demo"
 msgid "Please login to get more data."
 msgstr ""
 
-#: templates/projects/project_demo_detail.html:22
-#: templates/projects/project_detail.html:292
-msgid "Demos"
-msgstr "Demos"
-
 #: templates/projects/project_demo_detail.html:40
 msgid "Authors"
 msgstr "Auteurs"
-
-#: templates/projects/project_detail.html:136
-msgid "Project details"
-msgstr "Détails du projet"
-
-#: templates/projects/project_detail.html:142
-msgid "Program"
-msgstr "Programme"
-
-#: templates/projects/project_detail.html:153
-msgid "Program type"
-msgstr "Type de programme"
-
-#: templates/projects/project_detail.html:163
-msgid "Beginning"
-msgstr "Début"
-
-#: templates/projects/project_detail.html:172
-msgid "End"
-msgstr "Fin"
-
-#: templates/projects/project_detail.html:181
-msgid "Status"
-msgstr "Statut"
-
-#: templates/projects/project_detail.html:191
-msgid "Website"
-msgstr "Site internet"
-
-#: templates/projects/project_detail.html:210
-msgid "Participants"
-msgstr "Participants"
-
-#: templates/projects/project_detail.html:218
-msgid "Project lead team"
-msgstr "Équipe coordinatrice"
-
-#: templates/projects/project_detail.html:225
-msgid "Project lead organization"
-msgstr "Organisation principale du projet"
-
-#: templates/projects/project_detail.html:242
-msgid "Partners"
-msgstr "Partenaires"
-
-#: templates/projects/project_detail.html:257
-msgid "teams"
-msgstr ""
-
-#: templates/projects/project_detail.html:314
-msgid "Blog Pages"
-msgstr ""
 
 #: templates/search_results.html:5 templates/search_results.html:6
 #: templates/search_results.html:15
@@ -1020,10 +1046,6 @@ msgstr[1] ""
 msgid "Order History"
 msgstr ""
 
-#: templates/shop/order_history.html:19
-msgid "Date"
-msgstr ""
-
 #: templates/shop/order_history.html:21
 msgid "Paid"
 msgstr ""
@@ -1084,6 +1106,9 @@ msgstr ""
 #: templates/twitter/tweets.html:7
 msgid "Recent Tweets"
 msgstr "Tweets récents"
+
+#~ msgid "Reserve"
+#~ msgstr "Réserver"
 
 #~ msgid "Agenda"
 #~ msgstr "Rendez-vous"
