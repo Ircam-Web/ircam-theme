@@ -60,7 +60,7 @@
                             </div>
                         </a>
                     {% elif event_tag_highlighted == tag.id  %}
-                        <a class="banner banner--light banner--sidebar hide-until-sm rendez-vous" href="{% url 'event_list' %}"
+                        <a class="banner banner--light banner--sidebar hide-until-sm" href="{% url 'event_list' %}"
                             style="background-image:url({% static 'img/services/tours.jpg' %});">
                             <div class="banner__content">
                                 <div class="banner__title fsxxxl">
@@ -108,9 +108,19 @@
                                 {% include 'agenda/event/includes/event_linecard.html' %}
                             {% endfor %}
                             {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
-                            <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list_tag' 'tournees' %}" style="background-image:url({% static 'img/services/tours.jpg' %});">
+                            <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list_tag' 'tournees' %}"
+                                style="background-image:url({% static 'img/services/tours.jpg' %});">
                                 <div class="banner__content">
-                                    <div class="banner__title fsxxxl">{% trans "On tour" %} {{ current_season_styled }}
+                                    <div class="banner__title fsxxxl">{% trans "On tour" %}
+                                    </div>
+                                </div>
+                            </a>
+                            {% elif event_tag_highlighted == tag.id  %}
+                            <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list' %}"
+                                style="background-image:url({% static 'img/services/tours.jpg' %});">
+                                <div class="banner__content">
+                                    <div class="banner__title fsxxxl">
+                                        {% trans "Rendez-vous in Paris" %}
                                     </div>
                                 </div>
                             </a>

@@ -145,7 +145,7 @@ $module: ".banner";
             @include padding(0.3);
 
             @include mq($until: sm) {
-                @include padding(2);
+                @include padding(1);
             }
         }
 
