@@ -61,6 +61,24 @@ $module: ".home";
 
     }
 
+    &__magazine {
+        
+        h2 {
+            @include mq($until: xs) {
+                @include padding(0.1);
+                @include margin(0.1);
+            }
+        }
+
+        .button {
+            @include mq($until: xs) {
+                width: 100%;
+                @include margin-bottom(0.5);
+            }
+        }
+    }
+    
+
     &__shutter {
 
         position: absolute;
