@@ -146,12 +146,14 @@ $module: ".banner";
 
             @include mq($until: sm) {
                 @include padding(1);
+                
             }
         }
 
         @include mq($until: sm) {
             height: 150px;
             width: 100%;
+            background-position-y: 0px;
         }
 
     }
