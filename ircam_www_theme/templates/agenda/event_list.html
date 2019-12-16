@@ -50,15 +50,25 @@
                     </h1>
                 </div>
                 <div class="col-sm-3 col-lg-4 col-lg-push-2">
-                        {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
-                            <a class="banner banner--light banner--sidebar hide-until-sm" href="{% url 'event_list_tag' 'tournees' %}" style="background-image:url({% static 'img/services/tours.jpg' %});">
-                                <div class="banner__content">
-                                    <div class="banner__title fsxxxl">
-                                        {% trans "On tour" %}
-                                    </div>
+                    {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
+                        <a class="banner banner--light banner--sidebar hide-until-sm" href="{% url 'event_list_tag' 'tournees' %}"
+                            style="background-image:url({% static 'img/services/tours.jpg' %});">
+                            <div class="banner__content">
+                                <div class="banner__title fsxxxl">
+                                    {% trans "On tour" %}
                                 </div>
-                            </a>
-                        {% endif %}
+                            </div>
+                        </a>
+                    {% elif event_tag_highlighted == tag.id  %}
+                        <a class="banner banner--light banner--sidebar hide-until-sm rendez-vous" href="{% url 'event_list' %}"
+                            style="background-image:url({% static 'img/services/tours.jpg' %});">
+                            <div class="banner__content">
+                                <div class="banner__title fsxxxl">
+                                    {% trans "Rendez-vous in Paris" %}
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
 
@@ -67,8 +77,6 @@
                     <div style="position: relative;" >
                         <div class="nav-tree-wrapper" data-sticky data-sticky-parent="row" data-sticky-offset="100" data-sticky-detach-at="971">
                             {% page_menu "pages/menus/current_tree_event.html" %}
-
-
                             {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
                                 <ul class="nav-tree nav-tree--level-{{ branch_level }}">
                                 {% keywords_for mezzanine_agenda.event as tags %}

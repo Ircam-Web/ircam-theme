@@ -198,7 +198,7 @@ $module: ".banner";
         font-weight: weight(bold);
         display: inline-block;
         position: relative;
-        @include font-size(xxl);
+        @include font-size(xl);
 
         @include margin(0 0 1 0);
 
