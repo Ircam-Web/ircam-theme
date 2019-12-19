@@ -27,8 +27,8 @@
 
     <div class="container home__magazine">
         <div class="row">
-            <div class="col-xs-9 col-xxs-12"><h2>.{% trans "Magazine" %}</h2></div>
-            <div class="col-xs-3 col-xxs-12 mt1"><a class="button pull-right mr0" href="{% url 'magazine-article-list' %}">+&nbsp;{% trans 'all articles' %}</a></div>
+            <div class="col-xs-8 col-md-9 col-xxs-12"><h2>.{% trans "Magazine" %}</h2></div>
+            <div class="col-xs-4 col-md-3 col-xxs-12 mt1"><a class="button pull-right mr0" href="{% url 'magazine-article-list' %}">+&nbsp;{% trans 'all articles' %}</a></div>
         </div>
     </div>
 
@@ -38,6 +38,13 @@
         <hr class="mt0" />
         {% page_menu "pages/menus/header.html" %}
     </div>
+
+    <div class="container home__magazine__bottom">
+        <div class="row">
+            <div class="col-xs-3 col-xxs-12 mt1"><a class="button pull-right mr0" href="{% url 'magazine-article-list' %}">+&nbsp;{% trans 'all articles' %}</a></div>
+        </div>
+    </div>
+
 
     {% include "home/inc/bio.html" %}
 

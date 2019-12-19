@@ -71,10 +71,25 @@ $module: ".home";
         }
 
         .button {
+            @include padding(0.7);
+
             @include mq($until: xs) {
-                width: 100%;
-                @include margin-bottom(0.5);
+                display: none;
             }
+        }
+    }
+
+    &__magazine__bottom {
+
+        display: none;
+
+        @include mq($until: xs) {
+            display: block;
+        }
+
+        .button {
+            width: 100%;
+            @include padding(0.8);
         }
     }
     
