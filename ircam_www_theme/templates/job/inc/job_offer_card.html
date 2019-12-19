@@ -21,4 +21,9 @@
         {% endeditable %}
     </div>
     <a href="{{ jo.get_absolute_url }}" class="button button--small">{% trans "View" %}</a>
+
+
+    {% if content.text_button %}
+        <a class="button button--small" href="{{ content.get_absolute_url }}" title="{{ content.text_button }}" target="_blank">{{ content.text_button }}</a>
+    {% endif %}
 </div>

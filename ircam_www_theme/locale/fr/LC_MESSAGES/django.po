@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 17:31+0000\n"
+"POT-Creation-Date: 2019-12-19 10:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,7 +206,8 @@ msgid "Forgot password?"
 msgstr ""
 
 #: templates/agenda/event/includes/event_date_line.html:10
-#: templates/job/inc/candidacy_card.html:22
+#: templates/job/candidacy/candidacy_detail.html:28
+#: templates/job/inc/candidacy_card.html:29
 #: templates/network/person_detail_multiple_activities.html:78
 #: templates/network/person_detail_multiple_activities.html:82
 msgid "to"
@@ -448,6 +449,8 @@ msgstr ""
 
 #: templates/home/inc/slider.html:20
 #: templates/magazine/article/article_detail.html:44
+#: templates/magazine/article/article_list.html:8
+#: templates/magazine/article/article_list.html:30
 #: templates/magazine/article/includes/article_card.html:27
 msgid "News"
 msgstr "Actualité"
@@ -539,28 +542,32 @@ msgstr "Medias"
 msgid "all articles"
 msgstr "tous les articles"
 
-#: templates/job/candidacy_list.html:4
-msgid "Candidacies"
-msgstr ""
-
-#: templates/job/candidacy_list.html:11 templates/job/candidacy_list.html:18
-#: templates/job/candidacy_list.html:27
-msgid "Apply"
-msgstr "Candidatures"
-
-#: templates/job/candidacy_list.html:40
-msgid "Please come back later. There is no candidacy at the moment."
-msgstr ""
-"Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
-
-#: templates/job/inc/candidacy_card.html:22
-#: templates/job/inc/candidacy_card.html:24
+#: templates/job/candidacy/candidacy_detail.html:28
+#: templates/job/candidacy/candidacy_detail.html:30
+#: templates/job/inc/candidacy_card.html:29
+#: templates/job/inc/candidacy_card.html:31
 msgid "From"
 msgstr "Du"
 
-#: templates/job/inc/candidacy_card.html:26
+#: templates/job/candidacy/candidacy_detail.html:32
+#: templates/job/inc/candidacy_card.html:33
 msgid "until"
 msgstr "jusqu'au"
+
+#: templates/job/candidacy/candidacy_list.html:4
+msgid "Candidacies"
+msgstr ""
+
+#: templates/job/candidacy/candidacy_list.html:11
+#: templates/job/candidacy/candidacy_list.html:18
+#: templates/job/candidacy/candidacy_list.html:27
+msgid "Apply"
+msgstr "Candidatures"
+
+#: templates/job/candidacy/candidacy_list.html:42
+msgid "Please come back later. There is no candidacy at the moment."
+msgstr ""
+"Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
 
 #: templates/job/inc/job_offer_card.html:17
 msgid "Published on"
@@ -574,12 +581,17 @@ msgstr "Vue"
 msgid "Send message"
 msgstr ""
 
-#: templates/job/job_offer_list.html:4 templates/job/job_offer_list.html:11
-#: templates/job/job_offer_list.html:20
+#: templates/job/offer/job_offer_detail.html:38
+msgid "Expire on "
+msgstr "Expire le "
+
+#: templates/job/offer/job_offer_list.html:4
+#: templates/job/offer/job_offer_list.html:11
+#: templates/job/offer/job_offer_list.html:20
 msgid "Jobs"
 msgstr "Offres d'emplois et stages"
 
-#: templates/job/job_offer_list.html:33
+#: templates/job/offer/job_offer_list.html:33
 msgid "Please come back later. There is no job offer at the moment."
 msgstr ""
 "Merci de revenir plus tard. Il n'y a pas d'offre d'emploi pour le moment."
