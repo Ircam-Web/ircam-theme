@@ -15,11 +15,11 @@
 {% block page_title %}
 
     {% if job_offer.type %}
-        <div class="tag tag--small tag--category">
-            {% editable job_offer.type %}
-                {{ job_offer.type }}
-            {% endeditable %}
-        </div>
+        {% editable job_offer.type %}
+            <div class="tag tag--small tag--category">
+                    {{ job_offer.type }}
+            </div>
+        {% endeditable %}
     {% endif %}
 
     {% editable job_offer.title %}
