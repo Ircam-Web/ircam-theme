@@ -13,37 +13,31 @@
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
             {% editable content.title %}
-                {% if content.external_content %}
-                    <a href="{{ content.external_content }}">
-                {% else %}
-                    <a href="{% url 'organization-candidacy-detail' content.slug %}">
-                {% endif %}
-                    <h2 class="job-line-box__title">{{ content.title }}</h2>
-                </a>
+                <a href="{{ content.get_absolute_url }}"><h2 class="job-line-box__title">{{ content.title }}</h2></a>
             {% endeditable %}
 
-                <div class="job-line-box__desc">
-                    {% if object.date_from or object.date_to %}
-                        {% editable content.date_from content.date_to %}
-                            {% if content.date_from and content.date_to %}
-                                <strong>{% trans "From" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
-                            {% elif content.date_from %}
-                                <strong>{% trans "From" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}</strong><br/>
-                            {% elif content.date_to %}
-                                <strong>{% trans "until" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
-                            {% endif %}
-                        {% endeditable %}
-                        <br />
-                    {% endif %}
-                    {% editable content.content %}
-                        <div class="article-box__desc">
-                            {{ content.content|richtext_filters|safe|truncatechars_html:255 }}
-                        </div>
+            <div class="job-line-box__desc">
+                {% if content.date_from or content.date_to %}
+                    {% editable content.date_from content.date_to %}
+                        {% if content.date_from and content.date_to %}
+                            <strong>{% trans "From" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
+                        {% elif content.date_from %}
+                            <strong>{% trans "From" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}</strong><br/>
+                        {% elif content.date_to %}
+                            <strong>{% trans "until" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}</strong><br/>
+                        {% endif %}
                     {% endeditable %}
-                </div>
-                {% if content.text_button %}
-                    <a class="button button--small" href="{{ content.get_absolute_url }}" title="{{ content.text_button }}" target="_blank">{{ content.text_button }}</a>
+                    <br />
                 {% endif %}
+                {% editable content.content %}
+                    <div class="article-box__desc">
+                        {{ content.description|richtext_filters|safe|truncatechars_html:255 }}
+                    </div>
+                {% endeditable %}
+            </div>
+            {% if content.text_button %}
+                <a class="button button--small" href="{{ content.get_absolute_url }}" title="{{ content.text_button }}" target="_blank">{{ content.text_button }}</a>
+            {% endif %}
         </div>
     </div>
 

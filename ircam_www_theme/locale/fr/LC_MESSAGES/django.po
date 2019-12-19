@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-19 10:43+0000\n"
+"POT-Creation-Date: 2019-12-19 16:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,8 +140,6 @@ msgid "User"
 msgstr ""
 
 #: templates/admin/includes/recent_actions.html:31
-#, fuzzy
-#| msgid "My Actions"
 msgid "Action"
 msgstr "Mes Actions"
 
@@ -207,7 +205,7 @@ msgstr ""
 
 #: templates/agenda/event/includes/event_date_line.html:10
 #: templates/job/candidacy/candidacy_detail.html:28
-#: templates/job/inc/candidacy_card.html:29
+#: templates/job/inc/candidacy_card.html:23
 #: templates/network/person_detail_multiple_activities.html:78
 #: templates/network/person_detail_multiple_activities.html:82
 msgid "to"
@@ -544,13 +542,13 @@ msgstr "tous les articles"
 
 #: templates/job/candidacy/candidacy_detail.html:28
 #: templates/job/candidacy/candidacy_detail.html:30
-#: templates/job/inc/candidacy_card.html:29
-#: templates/job/inc/candidacy_card.html:31
+#: templates/job/inc/candidacy_card.html:23
+#: templates/job/inc/candidacy_card.html:25
 msgid "From"
 msgstr "Du"
 
 #: templates/job/candidacy/candidacy_detail.html:32
-#: templates/job/inc/candidacy_card.html:33
+#: templates/job/inc/candidacy_card.html:27
 msgid "until"
 msgstr "jusqu'au"
 
@@ -569,21 +567,14 @@ msgid "Please come back later. There is no candidacy at the moment."
 msgstr ""
 "Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
 
-#: templates/job/inc/job_offer_card.html:17
-msgid "Published on"
-msgstr "Publié le"
-
-#: templates/job/inc/job_offer_card.html:23
-msgid "View"
-msgstr "Vue"
+#: templates/job/inc/job_offer_card.html:30
+#: templates/job/offer/job_offer_detail.html:38
+msgid "Expire on "
+msgstr "Expire le "
 
 #: templates/job/inc/job_response_form.html:4
 msgid "Send message"
 msgstr ""
-
-#: templates/job/offer/job_offer_detail.html:38
-msgid "Expire on "
-msgstr "Expire le "
 
 #: templates/job/offer/job_offer_list.html:4
 #: templates/job/offer/job_offer_list.html:11
@@ -1111,6 +1102,12 @@ msgstr ""
 #: templates/twitter/tweets.html:7
 msgid "Recent Tweets"
 msgstr "Tweets récents"
+
+#~ msgid "Published on"
+#~ msgstr "Publié le"
+
+#~ msgid "View"
+#~ msgstr "Voir"
 
 #~ msgid "News Headlines"
 #~ msgstr "À la une"
