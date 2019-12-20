@@ -26,6 +26,8 @@ $module: ".pagination";
     margin: 0;
     padding: 0;
 
+    text-align: center;
+
     @include typeface(sans-serif);
 
     @include margin(0 0 2 0);

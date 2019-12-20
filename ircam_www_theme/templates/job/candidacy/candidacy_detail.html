@@ -1,0 +1,48 @@
+{% extends "job/base.html" %}
+{% load mezzanine_tags keyword_tags i18n organization_tags %}
+
+{% block facebook_meta %}
+    {% include 'core/inc/facebook_meta.html' with title=object.title description=object.description|safe %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+
+    {{ block.super }}
+    <li class="breadcrumb__item active">{{ object.title }}</li>
+
+{% endblock %}
+
+{% block page_title %}
+
+    {% editable object.title %}
+        <h1 class="dotted">{{ object.title }}</h1>
+    {% endeditable %}
+
+{% endblock %}
+
+{% block page_content %}
+    <div class="job-line-box__desc">
+        {% if object.date_from or object.date_to %}
+            {% editable object.date_from object.date_to %}
+            <strong>
+            {% trans 'Candidacies' %}&nbsp;:&nbsp;
+                {% if object.date_from and object.date_to %}
+                    {% trans "from" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}<br/>
+                {% elif object.date_from %}
+                    {% trans "from" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}<br/>
+                {% elif object.date_to %}
+                    {% trans "until" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}<br/>
+                {% endif %}
+                </strong>
+            </strong>
+            {% endeditable %}
+            <br />
+        {% endif %}
+    </div>
+    {% if object.content %}
+        {% editable object.content %}
+            {{ object.content|richtext_filters|safe }}
+        {% endeditable %}
+    {% endif %}
+
+{% endblock %}

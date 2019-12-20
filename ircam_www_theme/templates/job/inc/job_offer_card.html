@@ -1,24 +1,46 @@
 {% load i18n mezzanine_tags keyword_tags pages_tags organization_tags %}
-<div class="job-line-box">
-    {% if jo.type %}
-        <div class="tag tag--small tag--category">
-            {% editable jo.type %}
-                {{jo.type}}
-            {% endeditable %}
+<div class="job-line-box job-line-box--candidacy">
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tac">
+
+            {% with jo.images.all|get_type:'card' as images %}
+                {% if images %}
+                    <img class="job-line-box__image" src="{{ MEDIA_URL }}{% thumbnail images.first 150 150 %}" alt="{{ jo.title }}">
+                {% endif %}
+            {% endwith %}
+
         </div>
-    {% endif %}
-    <a href="{{ jo.get_absolute_url }}">
-        <h2 class="job-line-box__title">
-            {{ jo.title }}
-        </h2>
-    </a>
-    <div class="job-line-box__desc">
-        {% if jo.type %}
-            <strong>{% trans 'Published on' %} {{ jo.publish_date|date:"DATE_FORMAT" }}</strong><br />
-        {% endif %}
-        {% editable jo.description %}
-            {{ jo.description|slice:":255" }}
-        {% endeditable %}
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            {% editable jo.title %}
+                <a href="{{ jo.get_absolute_url }}"><h2 class="job-line-box__title">{{ jo.title }}</h2></a>
+            {% endeditable %}
+
+            {% if jo.type %}
+                {% editable jo.type %}
+                    <strong>
+                        {{ jo.type }}
+                    </strong>
+                {% endeditable %}
+            {% endif %}
+
+            <div class="job-line-box__desc">           
+                {% if jo.expiry_date %}
+                    {% editable jo.expiry_date %}
+                        <strong>{% trans 'Candidacies : ' %}{% trans "until" %}&nbsp;{{ jo.expiry_date|date:"DATE_FORMAT" }}</strong>
+                    {% endeditable %}
+                {% endif %}
+                {% editable jo.content %}
+                    <div class="article-box__desc">
+                        {{ jo.description|richtext_filters|safe|truncatechars_html:255 }}
+                    </div>
+                {% endeditable %}
+            </div>
+
+            {% if jo.text_button %}
+                <a class="button button--small" href="{{ jo.get_absolute_url }}" title="{{ jo.text_button }}" target="_blank">{{ jo.text_button }}</a>
+            {% endif %}
+        </div>
     </div>
-    <a href="{{ jo.get_absolute_url }}" class="button button--small">{% trans "View" %}</a>
+
 </div>
