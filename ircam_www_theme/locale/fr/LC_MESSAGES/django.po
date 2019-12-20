@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-19 16:09+0000\n"
+"POT-Creation-Date: 2019-12-20 10:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -204,8 +204,8 @@ msgid "Forgot password?"
 msgstr ""
 
 #: templates/agenda/event/includes/event_date_line.html:10
-#: templates/job/candidacy/candidacy_detail.html:28
-#: templates/job/inc/candidacy_card.html:23
+#: templates/job/candidacy/candidacy_detail.html:30
+#: templates/job/inc/candidacy_card.html:25
 #: templates/network/person_detail_multiple_activities.html:78
 #: templates/network/person_detail_multiple_activities.html:82
 msgid "to"
@@ -536,25 +536,31 @@ msgstr "Magazine"
 msgid "Medias"
 msgstr "Medias"
 
-#: templates/index.html:31
+#: templates/index.html:31 templates/index.html:44
 msgid "all articles"
 msgstr "tous les articles"
 
 #: templates/job/candidacy/candidacy_detail.html:28
-#: templates/job/candidacy/candidacy_detail.html:30
+#: templates/job/candidacy/candidacy_list.html:4
 #: templates/job/inc/candidacy_card.html:23
-#: templates/job/inc/candidacy_card.html:25
-msgid "From"
-msgstr "Du"
+msgid "Candidacies"
+msgstr "Candidatures"
 
+#: templates/job/candidacy/candidacy_detail.html:30
 #: templates/job/candidacy/candidacy_detail.html:32
+#: templates/job/inc/candidacy_card.html:25
 #: templates/job/inc/candidacy_card.html:27
+#: templates/network/person_detail_multiple_activities.html:80
+#: templates/network/person_detail_multiple_activities.html:82
+msgid "from"
+msgstr "du"
+
+#: templates/job/candidacy/candidacy_detail.html:34
+#: templates/job/inc/candidacy_card.html:29
+#: templates/job/inc/job_offer_card.html:30
+#: templates/job/offer/job_offer_detail.html:47
 msgid "until"
 msgstr "jusqu'au"
-
-#: templates/job/candidacy/candidacy_list.html:4
-msgid "Candidacies"
-msgstr ""
 
 #: templates/job/candidacy/candidacy_list.html:11
 #: templates/job/candidacy/candidacy_list.html:18
@@ -568,9 +574,9 @@ msgstr ""
 "Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
 
 #: templates/job/inc/job_offer_card.html:30
-#: templates/job/offer/job_offer_detail.html:38
-msgid "Expire on "
-msgstr "Expire le "
+#: templates/job/offer/job_offer_detail.html:47
+msgid "Candidacies : "
+msgstr "Candidatures : "
 
 #: templates/job/inc/job_response_form.html:4
 msgid "Send message"
@@ -679,11 +685,6 @@ msgstr ""
 #: templates/network/person_detail_multiple_activities.html:82
 msgid "Period"
 msgstr "Période"
-
-#: templates/network/person_detail_multiple_activities.html:80
-#: templates/network/person_detail_multiple_activities.html:82
-msgid "from"
-msgstr "du"
 
 #: templates/pages/form.html:24
 msgid "Submit"
@@ -1102,6 +1103,12 @@ msgstr ""
 #: templates/twitter/tweets.html:7
 msgid "Recent Tweets"
 msgstr "Tweets récents"
+
+#~ msgid "Expire on "
+#~ msgstr "Expire le "
+
+#~ msgid "From"
+#~ msgstr "Du"
 
 #~ msgid "Published on"
 #~ msgstr "Publié le"

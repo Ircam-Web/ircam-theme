@@ -21,20 +21,24 @@
 {% endblock %}
 
 {% block page_content %}
-    {% if object.date_from or object.date_to %}
-        <div class="job-line-box__desc">
+    <div class="job-line-box__desc">
+        {% if object.date_from or object.date_to %}
             {% editable object.date_from object.date_to %}
+            <strong>
+            {% trans 'Candidacies' %}&nbsp;:&nbsp;
                 {% if object.date_from and object.date_to %}
-                    <strong>{% trans "From" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}</strong><br/>
+                    {% trans "from" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}<br/>
                 {% elif object.date_from %}
-                    <strong>{% trans "From" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}</strong><br/>
+                    {% trans "from" %}&nbsp;{{ object.date_from|date:"DATE_FORMAT" }}<br/>
                 {% elif object.date_to %}
-                    <strong>{% trans "until" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}</strong><br/>
+                    {% trans "until" %}&nbsp;{{ object.date_to|date:"DATE_FORMAT" }}<br/>
                 {% endif %}
+                </strong>
+            </strong>
             {% endeditable %}
-        </div>
-    {% endif %}
-
+            <br />
+        {% endif %}
+    </div>
     {% if object.content %}
         {% editable object.content %}
             {{ object.content|richtext_filters|safe }}

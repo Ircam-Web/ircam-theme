@@ -12,22 +12,22 @@
 
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-            {% if jo.type %}
-                {% editable jo.type %}
-                    <div class="tag tag--small tag--category mb1">
-                            {{ jo.type }}
-                    </div>
-                {% endeditable %}
-            {% endif %}
-
             {% editable jo.title %}
                 <a href="{{ jo.get_absolute_url }}"><h2 class="job-line-box__title">{{ jo.title }}</h2></a>
             {% endeditable %}
 
+            {% if jo.type %}
+                {% editable jo.type %}
+                    <strong>
+                        {{ jo.type }}
+                    </strong>
+                {% endeditable %}
+            {% endif %}
+
             <div class="job-line-box__desc">           
                 {% if jo.expiry_date %}
                     {% editable jo.expiry_date %}
-                        <strong>{% trans 'Expire on ' %}{{ jo.expiry_date|date:"DATE_FORMAT" }}</strong>
+                        <strong>{% trans 'Candidacies : ' %}{% trans "until" %}&nbsp;{{ jo.expiry_date|date:"DATE_FORMAT" }}</strong>
                     {% endeditable %}
                 {% endif %}
                 {% editable jo.content %}

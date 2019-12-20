@@ -14,14 +14,6 @@
 
 {% block page_title %}
 
-    {% if job_offer.type %}
-        {% editable job_offer.type %}
-            <div class="tag tag--small tag--category">
-                    {{ job_offer.type }}
-            </div>
-        {% endeditable %}
-    {% endif %}
-
     {% editable job_offer.title %}
         <h1 class="dotted">{{ job_offer.title }}</h1>
     {% endeditable %}
@@ -32,10 +24,19 @@
 
     {% include "core/inc/messages.html" %}
 
+
+    {% if job_offer.type %}
+        {% editable job_offer.type %}
+            <strong>
+                {{ job_offer.type }}
+            </strong>
+        {% endeditable %}
+    {% endif %}
+
     <div class="job-line-box__desc">
         {% if job_offer.expiry_date %}
             {% editable job_offer.expiry_date %}
-                <strong>{% trans 'Expire on ' %}{{ job_offer.expiry_date|date:"DATE_FORMAT" }}</strong>
+                <strong>{% trans 'Candidacies : ' %}{% trans "until" %}&nbsp;{{ job_offer.expiry_date|date:"DATE_FORMAT" }}</strong>
             {% endeditable %}
         {% endif %}
     </div>
