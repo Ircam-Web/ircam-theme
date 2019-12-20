@@ -26,11 +26,9 @@
 
 
     {% if job_offer.type %}
-        {% editable job_offer.type %}
-            <strong>
-                {{ job_offer.type }}
-            </strong>
-        {% endeditable %}
+        <strong>
+            {{ job_offer.type }}
+        </strong>
     {% endif %}
 
     <div class="job-line-box__desc">
