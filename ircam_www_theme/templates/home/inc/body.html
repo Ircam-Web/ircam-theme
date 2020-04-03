@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         {% for content in home.dynamiccontenthomebody_set.all %}
-            <div class="col-xs-4{% if forloop.counter > 3 %} hide-until-xs{% endif %}">
+            <div class="col-xs-4">
                 {% with app_label=content.content_object|app_label_short classname=content.content_object|classname|lower object=content.content_object  %}
                     {% with app_label|add:"/"|add:classname|add:"/includes/"|add:classname|add:"_card.html" as template %}
                         {% if template|template_exists %}
