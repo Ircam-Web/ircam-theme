@@ -27,7 +27,7 @@
 
     {% if job_offer.type %}
         <strong>
-            {{ job_offer.type }}
+            {{ job_offer.get_type_display }}
         </strong>
     {% endif %}
 
