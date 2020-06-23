@@ -46,7 +46,7 @@
             {% else %}
                 {% trans "and" %}
             {% endif %}
-            {{ event.end|date:"DATE_EVENT_FORMAT" }}
+            {{ event.end|date:"DATE_EVENT_FORMAT_Y" }}
         <!-- Start and end date are completely different  -->
         {% else %}
             {{ event.start|date:"DATE_EVENT_FORMAT" }} {% trans "through" %} {{ event.end|date:"DATE_EVENT_FORMAT_Y" }},<br>
