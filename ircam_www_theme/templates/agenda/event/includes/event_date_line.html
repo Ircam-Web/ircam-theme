@@ -5,8 +5,8 @@
     {{ object.start|date:"l j F" }}
 {% else %}
     {% if object.start|date:"d.m.y" == object.end|date:"d.m.y" %}
-        {{ object.start|date:"l j F" }}
+        {{ object.start|date:"l j F Y" }}
     {% else %}
-        {{ object.start|date:"j F" }} {% trans "to" %} {{ object.end|date:"j F" }}
+        {{ object.start|date:"j F" }} {% trans "to" %} {{ object.end|date:"j F Y" }}
     {% endif %}
 {% endif %}
