@@ -20,7 +20,7 @@
                         {% with object.media as media %}
                             {% for transcoded in object.transcoded.all %}
                                 {% if transcoded.mime_type == "audio/mp4" or transcoded.mime_type == "audio/mp3" %}
-                                    <a href="#" data-src="{{ transcoded.url }}"><span>{{ object.title }}</span>{% if object.description %}<small> {{ object.description|safe }}</small>{% endif %}</a>
+                                    <a href="#" data-src="{% if transcoded.url %}{{ transcoded.url }}{% else %}{{ transcoded.file.url }}{% endif %}"><span>{{ object.title }}</span>{% if object.description %}<small> {{ object.description|safe }}</small>{% endif %}</a>
                                 {% endif %}
                             {% endfor %}
                         {% endwith %}
