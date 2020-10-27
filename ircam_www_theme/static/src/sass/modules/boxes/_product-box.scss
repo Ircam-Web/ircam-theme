@@ -36,7 +36,7 @@ $module: ".product-box";
         @include font-size(xxl);
         @include line-height(2);
         @include typeface(sans-serif);
-        @include margin(0 0 1 0);
+        @include margin(0 0 0.3 0);
 
     }
 
@@ -47,6 +47,7 @@ $module: ".product-box";
         @include typeface(serif);
         @include margin(1 0 .25 0);
         font-weight: weight(light);
+        height: 13.5em;
 
     }
 
@@ -54,8 +55,10 @@ $module: ".product-box";
 
         @include padding(.5);
 
-        height: 150px;
+    }
 
+    .button {
+        margin-right: 1em;
     }
 
     &:after {
@@ -70,6 +73,10 @@ $module: ".product-box";
         left: 0;
         right: 0;
 
+    }
+
+    &__header {
+        height: 3.1rem;
     }
 
 }

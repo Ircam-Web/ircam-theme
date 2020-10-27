@@ -1,4 +1,4 @@
-{% extends "pages/page.html" %}
+{% extends "job/base.html" %}
 {% load i18n mezzanine_tags keyword_tags pages_tags organization_tags %}
 
 {% block meta_title %}{% trans "Candidacies" %}{% endblock %}
@@ -27,7 +27,9 @@
   <h1 class="dotted">{% trans "Apply" %}</h1>
 {% endblock %}
 
+
 {% block page_content %}
+
 
     {% if candidacy %}
 

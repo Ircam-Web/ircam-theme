@@ -1,4 +1,4 @@
-{% extends "pages/page.html" %}
+{% extends "job/base.html" %}
 {% load mezzanine_tags keyword_tags i18n organization_tags %}
 
 {% block facebook_meta %}
@@ -24,9 +24,21 @@
 
     {% include "core/inc/messages.html" %}
 
-    {% comment %}
-        <p>{% trans "Category" %} : {{ job_offer.type }}</p>
-    {% endcomment %}
+
+    {% if job_offer.type %}
+        <strong>
+            {{ job_offer.get_type_display }}
+        </strong>
+    {% endif %}
+
+    <div class="job-line-box__desc">
+        {% if job_offer.expiry_date %}
+            {% editable job_offer.expiry_date %}
+                <strong>{% trans 'Candidacies : ' %}{% trans "until" %}&nbsp;{{ job_offer.expiry_date|date:"DATE_FORMAT" }}</strong>
+            {% endeditable %}
+        {% endif %}
+    </div>
+
     {% editable job_offer.content %}
         {{ job_offer.content|richtext_filters|safe }}
     {% endeditable %}

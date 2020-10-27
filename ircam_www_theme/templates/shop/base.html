@@ -1,1 +1,56 @@
 {% extends "ircam_www/base.html" %}
+{% load i18n mezzanine_tags keyword_tags organization_tags pages_tags %}
+
+{% block meta_title %}{{ page.meta_title }}{% endblock %}
+
+{% block meta_keywords %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ product.description|safe }}
+{% endmetablock %}{% endblock %}
+
+{% block facebook_meta %}
+    {% with page.images.all|get_type:'card' as card_image %}
+    {% include 'core/inc/facebook_meta.html' with title=page.title description=page.description|safe image=card_image.first.file.url %}
+    {% endwith %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="page page--{% spaceless %}{% block page_class %}{% endblock %}{% endspaceless %}">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9 col-sm-push-3 col-lg-9 col-lg-push-2 white-bg">
+                    <h1>{% block page_title %}{% endblock %}</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-9 col-sm-push-3 col-lg-9 col-lg-push-2 white-bg" data-summary-content>
+                    {% block page_content %}
+
+                    {% endblock %}
+                   
+                </div>
+
+            </div>
+
+        </div>
+
+     
+    </div>
+
+    <div class="white-bg">
+
+        {% block page_related_content %}
+            {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
+        {% endblock %}
+
+    </div>
+
+
+{% endblock %}
