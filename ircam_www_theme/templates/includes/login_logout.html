@@ -16,13 +16,11 @@
             {% endfor %}
         {% endif %}
         <li class="profil-menu__item">
-            <!-- a href="{{ settings.LOGOUT_URL }}?next=/redirect/www">logout</a -->
-            <a href="{% url 'logout' %}">logout</a>
+            <a href = "/serverlogout">Logout</a>
             <!-- p>LOGOUT</p -->
         </li>
     {% else %}
-        <li class="profil-menu__item active">       
-            <!-- a href="{% url 'ircamauth_login' %}?next={{ request.path }}">login</a -->
+        <li class="profil-menu__item active">
             <a href="{% login_url %}">login</a>        
         </li>
     {% endif %}
