@@ -16,7 +16,7 @@
             {% endfor %}
         {% endif %}
         <li class="profil-menu__item">
-            <a href = "/serverlogout" id='serverLogout'>Logout</a>
+            <a href = "/serverlogout/?next={{ request.path }}" id='serverLogout'>Logout</a>
             <!-- p>LOGOUT</p -->
         </li>
     {% else %}
