@@ -14,7 +14,7 @@ Audio.prototype.init = function() {
 
     var that = this,
         as, i, playlist;
-
+	
     audiojs.events.ready(function() {
 
         as = audiojs.createAll();
@@ -57,24 +57,28 @@ Audio.prototype.init = function() {
             //
             // Load the first audio
             //
+	    
             var first = playlist.find('li a').attr('data-src');
-            playlist.find('li').first().addClass('playing');
-            that.setTitle(as[i], playlist.find('li:first-child a span').text(), playlist.find('li:first-child a small').text());
-            as[i].load(first);
-
-            playlist.find('li').bind('click', function(e) {
-
-                var idx = that.playlists.indexOf($(this).parent().get(0));
-
-                e.preventDefault();
-                $(this).addClass('playing').siblings().removeClass('playing');
-                that.audios[idx].load($('a', this).attr('data-src'));
-                that.audios[idx].play();
-                that.setTitle(that.audios[idx], $('a span', this).text(), $('a small', this).text());
-
-            });
-
-        }
+            if(typeof first != 'undefined'){
+		console.log("first", first)
+	    	playlist.find('li').first().addClass('playing');
+            	that.setTitle(as[i], playlist.find('li:first-child a span').text(), playlist.find('li:first-child a small').text());
+            
+	   	as[i].load(first);
+     
+            	playlist.find('li').bind('click', function(e) {
+                	var idx = that.playlists.indexOf($(this).parent().get(0));
+                	e.preventDefault();
+                	$(this).addClass('playing').siblings().removeClass('playing');
+                	that.audios[idx].load($('a', this).attr('data-src'));
+                	that.audios[idx].play();
+                	that.setTitle(that.audios[idx], $('a span', this).text(), $('a small', this).text());
+		})
+            }else{
+		as[i].load(as[i].mp3)
+		as[i].element.controls = false
+	    }
+	}
 
     });
 
