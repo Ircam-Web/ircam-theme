@@ -3,7 +3,7 @@
 <ul class="profil-menu" id="ProfilSelector">
     {% if request.user.is_authenticated %}
         <li class="profil-menu__item active">
-            <a href="#" class="unclickable"><i class="fa fa-user-circle"></i></a>
+            <a href="#" class="unclickable">{{ request.user.username }}<i class="fa fa-user-circle"></i></a>
         </li>
         {% if user.is_authenticated and user.person %}
             {% get_pages_in_menu menu_person_id as menu_login_logout %}
@@ -16,11 +16,12 @@
             {% endfor %}
         {% endif %}
         <li class="profil-menu__item">
-            <a href="{% url 'logout' %}">logout</a>
+            <a href = "/serverlogout/?next={{ request.path }}" id='serverLogout'>Logout</a>
+            <!-- p>LOGOUT</p -->
         </li>
     {% else %}
         <li class="profil-menu__item active">
-            <a href="{% url 'login' %}">login</a>
+            <a href="{% login_url %}?next={{ request.path }}" id='serverLogin'>login</a>
         </li>
     {% endif %}
 </ul>
