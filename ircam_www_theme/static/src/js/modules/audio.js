@@ -60,7 +60,6 @@ Audio.prototype.init = function() {
 	    
             var first = playlist.find('li a').attr('data-src');
             if(typeof first != 'undefined'){
-		console.log("first", first)
 	    	playlist.find('li').first().addClass('playing');
             	that.setTitle(as[i], playlist.find('li:first-child a span').text(), playlist.find('li:first-child a small').text());
             
