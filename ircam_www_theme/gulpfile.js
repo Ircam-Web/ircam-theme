@@ -63,7 +63,7 @@ gulp.task('main-js', function() {
 		  insertGlobals : true,
 		  debug : false
 		}))
-        .pipe(rename('index.min.js'))
+        .pipe(rename('index.min.js?v=1.1'))
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destFolder + 'js'))
