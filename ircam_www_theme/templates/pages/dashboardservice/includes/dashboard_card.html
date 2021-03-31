@@ -14,8 +14,7 @@
             {% with object.image as images %}
                 {% if images %}
                     <figure class="dashboardservice-box__image">
-                        <img src="{{ MEDIA_URL }}{% thumbnail images 400 280 %}" data-original="" class="lazyload" />
-                        <!-- img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-original="{{ MEDIA_URL }}{% thumbnail images 427 286 top=0.5 left=object.photo_alignment|get_photo_alignment %}" class="lazyload" / -->
+                        <img src="{{ MEDIA_URL }}{% thumbnail images 400 280 %}" data-original="" class="lazyload" title="{{ object.url }}"/>
                     </figure>
                 {% else %}
                     <figure class="dashboardservice-box__image">
