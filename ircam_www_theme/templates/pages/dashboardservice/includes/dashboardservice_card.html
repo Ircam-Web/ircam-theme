@@ -23,11 +23,12 @@
 
 {% block tags %}
     <div class="dashboardservice-box__tags">
-        <div class="tag tag--small tag--category">
+        <!-- div class="tag tag--small tag--category">
             {% trans 'Services' %}
-        </div>
-        <div class="tag tag--small dashed dashed--gray dashed--small">
             {{ object.dashboardservice.name }}
+        </div -->
+        <div class="tag tag--small tag--category">
+            {{ object.name }}
         </div>
     </div>
 {% endblock %}
