@@ -1136,3 +1136,6 @@ msgstr "Tweets récents"
 
 #~ msgid "Persons"
 #~ msgstr "Personnes"
+
+#~ msgid "Dashboard"
+#~ msgstr "Tableau de bord"
